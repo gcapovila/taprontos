@@ -1,0 +1,30 @@
+
+npm init -y
+npm install
+npm install express
+npm install nodemon -g
+npm install ejs
+
+Para iniciar a aplicação:
+  Botão Run do repl.it está funcionando
+    ou utilizar os comandos
+  nodemon server.js
+    ou
+  npm start
+
+Instalação do pacote do Knex no projeto (knex é um gerenciador de banco de dados)
+    npm install knex --save
+Instalação da biblioteca de Banco de Dados SQLite3
+    npm install sqlite3 --save
+
+Criar o knexfile
+    npx knex init
+Acessar o servidor na URL que vai dar o get em "Pedidos" para gerar o banco
+    http://127.0.0.1:3000/api/pedidos
+    
+Criar a pasta migrations com o arquivo com esquema do banco
+    npx knex migrate:make schema_[nome_desejado] (rodado para o banco 'pedidos', ou seja, npx knex migrate:make schema_pedidos)
+
+Criada pasta migrations, e nela o schema do banco definido acima (ex, pedidos)
+Alterar este arquivo, colocando nele o create table e rodar o up pra criar a tabela
+    npx knex migrate:up
