@@ -1,0 +1,68 @@
+
+PRÓXIMOS PASSOS:
+
+1 - Completar o documento da Pipeline, com a explicação das vantagens do GIT, justificando a escolha dele
+            Link: https://docs.google.com/document/d/13EscEVrpzBe2isEjf4Y-Cd3uE9nJDA5vyptg3sy2KA8/edit
+2 - Criar tela de acompanhar um pedido (na visão do cliente)
+3 - Criar funções para esta tela (talvez em um script separado)
+4 - Criar sistema de alerta para quando o pedido ficar pronto
+5 - Formatar o estilo das páginas (Bootstrap, Materialize, entre outros)
+6 - Documentação – requisitos funcionais e não funcionais atendidos na entrega
+
+--------------------------------------------------------------
+
+O QUE FOI FEITO ATÉ AQUI:
+
+Usando como exemplo os exercícios referentes às aulas 5 e 7 da matéria de Node:
+  Links:
+    https://1drv.ms/f/s!Aozio5w0IcPigcYGbRZNzzNljX80JA?e=PsRxdc - Exercício aula 5
+    https://1drv.ms/f/s!Aozio5w0IcPigdAAuJ68VMLZKJ15jg?e=247vj8 - Exercício aula 7
+
+1 - Criado arquivo server.js, onde sobe o servidor e tem o "use" que redireciona entre as APIs e as páginas
+
+2 - Criado o banco de dados sqlite3 com integração com o knex na pasta "migrations"
+  Criada a tabela de pedidos com seus campos
+  
+3 - Criadas as APIs de todas as operações de CRUD dentro da pasta "routes"
+  No server.js, tem uma rota "/api" que redireciona para o arquivo "routeAPI.js" dentro da pasta "routes"
+
+--------------------------------------------------------------
+
+Usando como exemplo o trabalho final da matéria de Node:
+    Link:
+      https://replit.com/@danielepd2017/Alunos
+
+4 - Criadas as páginas html na pasta "pages"
+  No server.js, a rota padrão "/" é a página inicial, e redireciona para o "index.html" dentro da pasta "pages"
+  No server,js, tem um mapeamenteo pada cada página html presente na pasta "pages"
+
+5 - Criado o script das páginas html dentro da pasta "pages"
+  Script criado seguindo como base o trabalho final de Node
+    Conforme link acima, que aponta para um repl.it
+  Arquivo "script.js"
+  Todas as funções chamadas em todos os botões (e onload) das páginas estão dentro deste arquivo
+
+--------------------------------------------------------------
+
+6 - Ainda no "script.js", criada uma função para gerar uma senha aleatoriamente
+  Na tela de incluir pedido, ao clicar no botão "Gerar senha", esta função é chamada
+
+7 - Criado o arquivo temporário do CSS das páginas na pasta "pages"
+  A formatação está bem simples por enquanto
+  Após concluir a formatação usando bootstrap ou materialize talvez possamos excluir o styles.css
+
+8 - A pasta "views" por enquanto não está sendo usada
+  Nas matérias anteriores, ela era usada para criar templates de páginas
+  Caso não seja usada podemos excluir
+  
+--------------------------------------------------------------
+
+9 - Criada nova pipeline no GitHub Actions, seguindo como exemplo todo o material da aula de Cloud
+  Link do repositório GIT:
+    https://github.com/gcapovila/taprontos
+
+10 - Criado documento no Google Docs com o passo a passo e prints da criação da pipeline
+  Link:
+    https://docs.google.com/document/d/13EscEVrpzBe2isEjf4Y-Cd3uE9nJDA5vyptg3sy2KA8/edit
+
+--------------------------------------------------------------
