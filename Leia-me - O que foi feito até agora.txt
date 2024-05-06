@@ -1,13 +1,13 @@
 
 PRÓXIMOS PASSOS:
 
-1 - Completar o documento da Pipeline, com a explicação das vantagens do GIT, justificando a escolha dele
-            Link: https://docs.google.com/document/d/13EscEVrpzBe2isEjf4Y-Cd3uE9nJDA5vyptg3sy2KA8/edit
-2 - Criar tela de acompanhar um pedido (na visão do cliente)
-3 - Criar funções para esta tela (talvez em um script separado)
-4 - Criar sistema de alerta para quando o pedido ficar pronto
-5 - Formatar o estilo das páginas (Bootstrap, Materialize, entre outros)
-6 - Documentação – requisitos funcionais e não funcionais atendidos na entrega
+DÚVIDA: Vamos manter o campo "Descreva brevemente os itens do pedido"? Vai demorar muito para o atendente escrever os itens, e os restaurantes já possuem a aplicação para fazer os pedidos que imprime o pedido lá na cozinha. Quando ler isso, poderia me explicar no que pensou com esse campo? Obrigada :)  
+
+1 - Criar tela de acompanhar um pedido (na visão do cliente)
+2 - Criar funções para esta tela (talvez em um script separado)
+3 - Criar sistema de alerta para quando o pedido ficar pronto
+4 - Formatar o estilo das páginas (Bootstrap, Materialize, entre outros)
+5 - Documentação – requisitos funcionais e não funcionais atendidos na entrega
 
 --------------------------------------------------------------
 

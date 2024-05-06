@@ -1,0 +1,25 @@
+body {
+    background-color: bisque;
+}
+
+.logo {
+    width: 100px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.navbar{
+    background-color: #F77825;
+}
+
+.containerCard{
+  justify-content: space-around;
+}
+
+.imagemQR{
+    width: 100%;
+    
+}

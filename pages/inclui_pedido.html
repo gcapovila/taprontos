@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <script type="text/javascript" src="script.js"></script>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tá Pronto's</title>
+        <link rel="stylesheet" href="style.css">
+</script>
+    </head>
+
+    <body>
+
+        <br>
+
+        <div>
+            <a href="/">Página inicial</a>
+        </div>
+
+        <div>
+            <div>
+                <p>Descreva brevemente os itens do pedido:</p>
+                <textarea id="itens"></textarea>
+            </div>
+            <div>
+                <p>Senha:</p>
+                <input id="senha" disabled></input>
+                <button onclick="geraSenha()">Gerar senha</button>
+            </div>
+            <br>
+            <div>
+                <button onclick="incluiPedido()">Salvar</button>
+                <button onclick="limpaCamposInclusao()">Limpar campos</button>
+                <button onclick="window.location.href = '/lista_pedidos'">Gerenciar pedidos</button>
+            </div>
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <script type="text/javascript" src="script.js"></script>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tá Pronto's</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body onload=carregaDetalhesPedido()>
+        <br>
+        <div>
+            <a href="/lista_pedidos">Voltar</a>
+        </div>
+
+        <br>
+        <div>
+            <div id="detalhes_pedido">
+                <div>
+                    <p>ID:</p>
+                    <p id="id_pedido"></p>
+                </div>
+                <div>
+                    <p>Senha:</p>
+                    <p id="senha"></p>
+                </div>
+                <div>
+                    <p>Alterar status:</p>
+                    <!-- Status: 1 = "Na fila de espera" | 2 = "Em preparação" | 3 = "Pronto" | 4 - "Entregue" -->
+                    <select id="status">
+                        <option value="1">Na fila de espera</option>
+                        <option value="2">Em preparação</option>
+                        <option value="3">Pronto</option>
+                        <option value="4">Entregue</option>
+                    </select>
+                    <button onclick="alteraStatus()">Salvar alteração de status</button>
+                </div>
+                <div>
+                    <p>Itens:</p>
+                    <p id="itens"></p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
