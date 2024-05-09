@@ -14,7 +14,8 @@ app.use('/lista_pedidos', express.static(path.join(__dirname, '/pages/lista_pedi
 app.use('/altera_status', express.static(path.join(__dirname, '/pages/altera_status.html')));
 app.use('/incluir_pedido', express.static(path.join(__dirname, '/pages/inclui_pedido.html')));
 app.use('/mostra_qrCode', express.static(path.join(__dirname, '/pages/mostra_qrCode.html')));
-app.use('/busca_senha', express.static(path.join(__dirname, '/pages/cliente/busca_senha.html')));
+app.use('/busca_senha', express.static(path.join(__dirname, '/pages/busca_senha.html')));
+app.use('/aguarda_senha', express.static(path.join(__dirname, '/pages/aguarda_senha.html')));
 
 // Configurando rota que sera chamada ao acessar o caminho /api
 // Tudo que for chamado em /api vai chamar o codigo que esta na rota importada

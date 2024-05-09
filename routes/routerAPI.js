@@ -66,6 +66,24 @@ routerAPI.get('/pedidos/:id', (req, res) => {
     })
 });
 
+// GET para obter status de um pedido - http://[servidor]:[porta]/api/senha/[senha_pedido]
+routerAPI.get('/senha/:senha_pedido', (req, res) => {
+    let senha_pedido = req.params.senha_pedido;
+    knex('pedidos').where('senha_pedido', senha_pedido)
+        .then((dados) => {
+            if (dados != ""){
+                res.json(dados);
+            } else {
+                res.json({
+                    message: `Pedido de senha ${senha_pedido} não encontrado`
+                })
+            }
+        })
+    .catch((err) => {
+        res.json ({ message: `Erro ao obter pedido: ${err.message}` });
+    })
+});
+
 // PUT para alterar um pedido - http://[servidor]:[porta]/api/pedidos/[id]
 routerAPI.put('/pedidos/:id', (req, res) => { 
     console.log (req.body);

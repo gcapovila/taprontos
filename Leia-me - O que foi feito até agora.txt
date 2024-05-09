@@ -3,11 +3,15 @@ PRÓXIMOS PASSOS:
 
 DÚVIDA: Vamos manter o campo "Descreva brevemente os itens do pedido"? Vai demorar muito para o atendente escrever os itens, e os restaurantes já possuem a aplicação para fazer os pedidos que imprime o pedido lá na cozinha. Quando ler isso, poderia me explicar no que pensou com esse campo? Obrigada :)  
 
-1 - Criar tela de acompanhar um pedido (na visão do cliente)
-2 - Criar funções para esta tela (talvez em um script separado)
-3 - Criar sistema de alerta para quando o pedido ficar pronto
-4 - Formatar o estilo das páginas (Bootstrap, Materialize, entre outros)
+    ----> podemos remover este campo sim =D
+          faz sentido, pois realmente, os restaurantes já possuem aplicação que faz isso
+
+1 - Criar tela de acompanhar um pedido (na visão do cliente) - Ok
+2 - Criar funções para esta tela (talvez em um script separado) - Ok
+3 - Criar sistema de alerta para quando o pedido ficar pronto - Ok
+4 - Formatar o estilo das páginas (Bootstrap, Materialize, entre outros) - Em progresso
 5 - Documentação – requisitos funcionais e não funcionais atendidos na entrega
+6- Falta criar campo de mensagem - Vamos criar mesmo?
 
 --------------------------------------------------------------
 
@@ -66,3 +70,14 @@ Usando como exemplo o trabalho final da matéria de Node:
     https://docs.google.com/document/d/13EscEVrpzBe2isEjf4Y-Cd3uE9nJDA5vyptg3sy2KA8/edit
 
 --------------------------------------------------------------
+
+11- Criada a página mostra_qrCode.html, a qual o atendente poderá exibir o QR Code da aplicação ao cliente, que poderá acessar o site pelo próprio celular;
+
+12- Feito ajustes visuais nas páginas index.html, lista_pedidos.html;
+
+13- Criados os arquivos busca_senha.html e scriptBuscaSenha.js. A página html é o link do QR Code. Ao acessar, o cliente poderá inserir sua senha e verificar o status do pedido. 
+O sistema armazena a senha no localstorage.
+A ideia é que o cliente seja redirecionado da página busca_senha.html para a página aguarda_senha.html
+
+14- Por enquanto, as funcionalidades da página aguarda_senha.html são visíveis apenas via console do navegador. A ideia é trazer para a tela. 
+A página aguarda_senha.html está associada ao arquivo scriptAguardaSenha, que possui a chamada para um get que retorna os dados com base na senha passada. 
