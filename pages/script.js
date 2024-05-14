@@ -49,8 +49,8 @@ function adicionarNaTabela(id, senha, status, itens, idTabela) {
     c3.innerText = "Entregue"
   }
   c4.innerText = itens;
-  c5.innerHTML = "<button class='btn btn-secondary' onclick='redirecionaParaAlterarPedido(" + id + ")' >Alterar status</button>"
-  c6.innerHTML = "<button class='btn btn-secondary' onclick='removePedido(" + id + ")' >Excluir pedido</button>"
+  c5.innerHTML = "<button class='btn btn-warning' onclick='redirecionaParaAlterarPedido(" + id + ")' >Alterar status</button>"
+  c6.innerHTML = "<button class='btn btn-danger' onclick='removePedido(" + id + ")' >Excluir pedido</button>"
 
 }
 
@@ -143,27 +143,31 @@ function alteraStatus(){
 }
 
 function removePedido(idPedido){
+
+  if (confirm( "Deseja excluir o pedido de ID " + idPedido + "?")) {
   
-  const xmlhttp = new XMLHttpRequest();
-  xmlhttp.open('DELETE', '/api/pedidos/' + idPedido);
-  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  xmlhttp.send();
-
-  xmlhttp.onreadystatechange = function(){
-    if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 200) {
-      
-      let retorno = JSON.parse(xmlhttp.responseText)
-      
-      consultaPedidos();
-      
-      alert(retorno.message)
-
-    } else if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 403) {
-
-      let retorno = JSON.parse(xmlhttp.responseText);
-      alert(retorno.message);      
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('DELETE', '/api/pedidos/' + idPedido);
+    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xmlhttp.send();
+  
+    xmlhttp.onreadystatechange = function(){
+      if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 200) {
+        
+        let retorno = JSON.parse(xmlhttp.responseText)
+        
+        consultaPedidos();
+        
+        alert(retorno.message)
+  
+      } else if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 403) {
+  
+        let retorno = JSON.parse(xmlhttp.responseText);
+        alert(retorno.message);      
+      }
     }
-  }  
+    
+  }
 }
 
 function removeTodosPedidos(){
@@ -195,11 +199,9 @@ function removeTodosPedidos(){
 
 function incluiPedido() {
 
-  if(
-    (!document.getElementById('itens').value) ||
-    (!document.getElementById('senha').value)
-    ){
-    alert("Por favor, preencha todos os campos!");
+  if(!document.getElementById('senha').value) {
+    
+    alert("É necessário gerar uma senha para o pedido");
   
   } else {
   

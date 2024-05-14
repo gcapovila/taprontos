@@ -8,40 +8,83 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tá Pronto's</title>
         <link rel="stylesheet" href="style.css">
+
+        <!-- Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </head>
 
     <body onload=carregaDetalhesPedido()>
-        <br>
-        <div>
-            <a href="/lista_pedidos">Voltar</a>
-        </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid">
+                <img src="https://raw.githubusercontent.com/10Daniele/imagensTaProntos/main/TaProntosLogo.png" alt="Minha Imagem" width="90px">
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/lista_pedidos">Gerenciar Pedidos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/inclui_pedido">Incluir Pedido</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/mostra_qrCode">Mostrar QR Code</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
         <br>
-        <div>
-            <div id="detalhes_pedido">
+
+        <div class="container">
+            <!-- Breadcrumb --> 
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/lista_pedidos">Gerenciar Pedidos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Alterar Status do Pedido</li>
+                </ol>
+            </nav>       
+
+            <!-- Formulário para alterar status -->
+            <div class="container jumbotron fundoForms p-5 rounded">
+                <h1 class="display-4">Alterar Status do Pedido</h1>
+                <hr class="my-4">
+
+            
                 <div>
-                    <p>ID:</p>
-                    <p id="id_pedido"></p>
-                </div>
-                <div>
-                    <p>Senha:</p>
-                    <p id="senha"></p>
-                </div>
-                <div>
-                    <p>Alterar status:</p>
-                    <!-- Status: 1 = "Na fila de espera" | 2 = "Em preparação" | 3 = "Pronto" | 4 - "Entregue" -->
-                    <select id="status">
-                        <option value="1">Na fila de espera</option>
-                        <option value="2">Em preparação</option>
-                        <option value="3">Pronto</option>
-                        <option value="4">Entregue</option>
-                    </select>
-                    <button onclick="alteraStatus()">Salvar alteração de status</button>
-                </div>
-                <div>
-                    <p>Itens:</p>
-                    <p id="itens"></p>
-                </div>
+                    <div id="detalhes_pedido">
+                        <div>
+                            <label><b>ID: </b></label>
+                            <label id="id_pedido"></label>
+                        </div>
+                        <br>
+                        <div>
+                            <label><b>Senha: </b></label>
+                            <label id="senha"></label>
+                        </div> 
+                        <br>
+                        <div>
+                            <label><b>Itens: </b></label>
+                            <label id="itens"></label>
+                        </div>
+                        <br>
+                        <div>
+                            <label><b>Alterar Status: </b></label>
+                            <!-- Status: 1 = "Na fila de espera" | 2 = "Em preparação" | 3 = "Pronto" | 4 - "Entregue" -->
+                            <select id="status">
+                                <option value="1">Na fila de espera</option>
+                                <option value="2">Em preparação</option>
+                                <option value="3">Pronto</option>
+                                <option value="4">Entregue</option>
+                            </select>
+                            <br>
+                            
+                        </div>
+                        <hr class="my-4">
+                        <div class="btn-group" role="group">
+                            <button onclick="alteraStatus()" class="btn btn-success">Salvar alteração de status</button>
+                            <button onclick="window.location.href = '/lista_pedidos'" class="btn btn-primary">Voltar</button>
+                    </div>
+                </div>          
+               
             </div>
         </div>
 

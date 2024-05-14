@@ -1,17 +1,13 @@
 
 PRÓXIMOS PASSOS:
 
-DÚVIDA: Vamos manter o campo "Descreva brevemente os itens do pedido"? Vai demorar muito para o atendente escrever os itens, e os restaurantes já possuem a aplicação para fazer os pedidos que imprime o pedido lá na cozinha. Quando ler isso, poderia me explicar no que pensou com esse campo? Obrigada :)  
-
-    ----> podemos remover este campo sim =D
-          faz sentido, pois realmente, os restaurantes já possuem aplicação que faz isso
-
 1 - Criar tela de acompanhar um pedido (na visão do cliente) - Ok
 2 - Criar funções para esta tela (talvez em um script separado) - Ok
 3 - Criar sistema de alerta para quando o pedido ficar pronto - Ok
-4 - Formatar o estilo das páginas (Bootstrap, Materialize, entre outros) - Em progresso
+4 - Formatar o estilo das páginas (Bootstrap, Materialize, entre outros) - Ok
 5 - Documentação – requisitos funcionais e não funcionais atendidos na entrega
-6- Falta criar campo de mensagem - Vamos criar mesmo?
+6- Criar campo de mensagem - Vamos criar mesmo?
+7- Remover campo "Descreva brevemente os itens do pedido"
 
 --------------------------------------------------------------
 

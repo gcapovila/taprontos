@@ -44,16 +44,16 @@ function formataStatus(status){
 function montaBarraProgresso(status){
     switch(status){
         case 1: 
-            document.getElementById("barraProgresso").innerHTML = '<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 60px"><div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 30%">Pedido na fila de espera</div></div>"';
+            document.getElementById("barraProgresso").innerHTML = '<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 60px"><div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 30%">Pedido na fila de espera</div></div>';
             break;
         case 2: 
-            document.getElementById("barraProgresso").innerHTML = '<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="height: 60px"><div class="progress-bar progress-bar-striped progress-bar-animated bg-warning text-dark" style="width: 70%">Pedido em preparação</div></div>"';
+            document.getElementById("barraProgresso").innerHTML = '<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="height: 60px"><div class="progress-bar progress-bar-striped progress-bar-animated bg-warning text-dark" style="width: 70%">Pedido em preparação</div></div>';
             break;
         case 3: 
             document.getElementById("barraProgresso").innerHTML = '<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="height: 60px"><div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 100%">Pedido pronto!</div></div><br><audio controls autoplay><source src="https://raw.githubusercontent.com/10Daniele/imagensTaProntos/main/Musica.mp3" type="audio/mp3">Seu navegador não suporta o elemento de áudio. </audio>';
             break;
         case 4: 
-            document.getElementById("barraProgresso").innerHTML = '<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="height: 60px"><div class="progress-bar progress-bar-striped progress-bar-animated bg-info text-dark" style="width: 100%">Pedido entregue!</div></div>"';
+            document.getElementById("barraProgresso").innerHTML = '<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="height: 60px"><div class="progress-bar progress-bar-striped progress-bar-animated bg-info text-dark" style="width: 100%">Pedido entregue!</div></div>';
             break;
     }
 }
