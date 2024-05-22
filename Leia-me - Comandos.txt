@@ -20,7 +20,7 @@ Instalação da biblioteca de Banco de Dados SQLite3
 Criar o knexfile
     npx knex init
 Acessar o servidor na URL que vai dar o get em "Pedidos" para gerar o banco
-    http://127.0.0.1:3000/api/pedidos
+    https://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/api/pedidos
     
 Criar a pasta migrations com o arquivo com esquema do banco
     npx knex migrate:make schema_[nome_desejado] (rodado para o banco 'pedidos', ou seja, npx knex migrate:make schema_pedidos)
