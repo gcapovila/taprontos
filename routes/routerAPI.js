@@ -28,7 +28,7 @@ routerAPI.post('/pedidos', (req, res) => {
                 const id = dados[0].id;
                 const senha_pedido = dados[0].senha_pedido;
                 // Salvar o log no nível debug
-                logger.debug("Pedido adicionado com sucesso. ID: " + id + "| Senha: " + senha_pedido);
+                logger.debug("Pedido adicionado com sucesso. ID: " + id + " | Senha: " + senha_pedido);
                 res.status(201).json( {
                     message: 'Pedido adicionado com sucesso',
                     data: { id, senha_pedido }
