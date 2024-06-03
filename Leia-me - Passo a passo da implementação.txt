@@ -70,6 +70,21 @@ A página aguarda_senha.html está associada ao arquivo scriptAguardaSenha, que 
 
 --------------------------------------------------------------
 
+Itens "Em progresso" da planilha de requisitos:
+  Configurações como variáveis de ambiente
+  Registro de eventos (logs)
+  Automação de testes
+  CRUD para os usuários atendentes (login)
+
+16 - Criado arquivo ".env" para armazenar as variáveis de ambiente
+  Instalado o dotenv utilizando o comando "npm install dotenv"
+  Criadas, no arquivo, as variáveis "PORT" (com valor 3000) e "LOCAL_HOST" (com valor '127.0.0.1')
+  Alterado o arquivo "server.js" para chamar essas variáveis
+
+17 - 
+
+--------------------------------------------------------------
+
 PRÓXIMOS PASSOS:
 
 1 - Criar funcionalidade de mensagem - Vamos criar mesmo?
