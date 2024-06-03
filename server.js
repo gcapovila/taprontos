@@ -5,6 +5,8 @@ const app = express();
 const routerAPI = require('./routes/routerAPI');
 // Importa o módulo path para concatenar caminhos nas URLs
 const path = require('path');
+// Modulo para ler o arquivo .env
+require('dotenv').config();
 
 // Sempre que eu acessar esta rota , vai abrir o 'index.html' da pasta pages
 app.use('/', express.static(path.join(__dirname, '/pages')));
@@ -27,9 +29,16 @@ app.use((req, res) => {
     res.send('Recurso solicitado não existe');
 })
 
-// Configurando porta e IP do servidor
-const port = 3000
-const servidor = '127.0.0.1'
+/* O servidor local e a porta ficam armazenados como variavel de ambiente no arquivo .env
+ * IMPORTANTE: no repl.it, tem que ir no menu lateral esquerdo e clicar em Secrets, pois ele não permite criar o .env
+
+ * O codigo abaixo vai ler o arquivo '.env'. Para que isso seja possivel, é necessario
+ * Rodar o comando 'npm install dotenv', e fazer o require para este modulo no comeco deste codigo */
+                       
+const port = process.env.PORT
+const servidor = process.env.LOCAL_HOST
+
+
 app.listen(port, function () {
     console.log(`Servidor rodando em http://${servidor}:${port}`);
 });

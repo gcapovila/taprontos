@@ -4,6 +4,7 @@ npm install
 npm install express
 npm install nodemon -g
 npm install ejs
+npm install dotenv
 
 Para iniciar a aplicação:
   Botão Run do repl.it está funcionando
