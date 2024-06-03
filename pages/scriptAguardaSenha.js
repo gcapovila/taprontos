@@ -16,7 +16,7 @@ window.onload = function(){
 }
 
 function atualizaStatus(senha){
-    fetch(`https://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/api/senha/${senha}`)
+    fetch(`/api/senha/${senha}`)
         .then(resposta => resposta.json())
         .then (retorno => {console.log(retorno)
             var status = retorno[0].status;     
