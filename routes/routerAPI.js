@@ -4,6 +4,8 @@ const routerAPI = express.Router();
 // Utilizando knex para gerenciar o banco de dados
 const knexConfig = require('../knexfile');
 const knex = require('knex')(knexConfig.development);
+// Importando o arquivo responsável por salvar os logs
+const logger = require('../logger');
 
 // Processa o corpo da requisicao e insere os dados recebidos como atributos de req.body
 routerAPI.use(express.json());
@@ -23,8 +25,10 @@ routerAPI.post('/pedidos', (req, res) => {
         .insert(req.body, ['id', 'senha_pedido'])
         .then((dados) => {
             if (dados.length > 0) {
-                const id = dados[0].id
-                const senha_pedido = dados[0].senha_pedido
+                const id = dados[0].id;
+                const senha_pedido = dados[0].senha_pedido;
+                // Salvar o log no nível debug
+                logger.debug("Pedido adicionado com sucesso. ID: " + id + "| Senha: " + senha_pedido);
                 res.status(201).json( {
                     message: 'Pedido adicionado com sucesso',
                     data: { id, senha_pedido }
@@ -32,6 +36,8 @@ routerAPI.post('/pedidos', (req, res) => {
             }
         })
     .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao inserir pedido");
         res.json ({ message: `Erro ao inserir pedido: ${err.message}` });
     })
 });
@@ -42,6 +48,8 @@ routerAPI.get('/pedidos', (req, res) => {
     .then((dados) => {
         res.json (dados);
     }).catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao obter os pedidos");
         res.json ({
             message: `Erro ao obter os pedidos: ${err.message}`
         });
@@ -54,6 +62,8 @@ routerAPI.get('/pedidos/:id', (req, res) => {
     knex('pedidos').where('id', id)
         .then((dados) => {
             if (dados != ""){
+                // Salvar o log no nível debug
+                logger.debug("Obtendo o pedido de ID " + id);
                 res.json(dados);
             } else {
                 res.json({
@@ -62,6 +72,8 @@ routerAPI.get('/pedidos/:id', (req, res) => {
             }
         })
     .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao obter pedido de ID " + id);
         res.json ({ message: `Erro ao obter pedido: ${err.message}` });
     })
 });
@@ -72,6 +84,8 @@ routerAPI.get('/senha/:senha_pedido', (req, res) => {
     knex('pedidos').where('senha_pedido', senha_pedido)
         .then((dados) => {
             if (dados != ""){
+                // Salvar o log no nível debug
+                logger.debug("Obtendo pedido de senha " + senha_pedido);
                 res.json(dados);
             } else {
                 res.json({
@@ -80,6 +94,8 @@ routerAPI.get('/senha/:senha_pedido', (req, res) => {
             }
         })
     .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao obter pedido de senha " + senha_pedido);
         res.json ({ message: `Erro ao obter pedido: ${err.message}` });
     })
 });
@@ -94,6 +110,8 @@ routerAPI.put('/pedidos/:id', (req, res) => {
         .then((dados) => {
             if (dados.length > 0) {
                 const id = dados[0].id
+                // Salvar o log no nível debug
+                logger.debug(`Pedido de ID ${id} alterado`);
                 res.status(201).json( {
                     message: `Pedido de ID ${id} alterado com sucesso`,
                     data: { id }});
@@ -104,6 +122,8 @@ routerAPI.put('/pedidos/:id', (req, res) => {
             }
         })
     .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao alterar pedido de ID " + id);
         res.json ({ message: `Erro ao alterar pedido: ${err.message}` });
     })
 });
@@ -118,6 +138,8 @@ routerAPI.patch('/pedidos/:id', (req, res) => {
         .then((dados) => {
             if (dados.length > 0) {
                 const id = dados[0].id
+                // Salvar o log no nível debug
+                logger.debug(`Pedido de ID ${id} alterado`);
                 res.status(201).json( {
                     message: `Pedido de ID ${id} alterado com sucesso`,
                     data: { id }});
@@ -128,6 +150,8 @@ routerAPI.patch('/pedidos/:id', (req, res) => {
             }
         })
     .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao alterar pedido de ID " + id);
         res.json ({ message: `Erro ao alterar pedido: ${err.message}` });
     })
 });
@@ -141,6 +165,8 @@ routerAPI.delete('/pedidos/:id', (req, res) => {
         .then((dados) => {
             if (dados != ""){
                 id = dados[0].id;
+                // Salvar o log no nível debug
+                logger.debug(`Pedido de ID ${id} excluído`);
                 knex('pedidos')
                     .where('id', id)
                     .del(req.body, ['id'])
@@ -155,6 +181,8 @@ routerAPI.delete('/pedidos/:id', (req, res) => {
             }
         })
     .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao excluir pedido de ID " + id);
         res.json ({ message: `Erro ao excluir pedido: ${err.message}` });
     })
 });
@@ -165,6 +193,8 @@ routerAPI.delete('/pedidos', (req, res) => {
     knex('pedidos')
         .then((dados) => {
             if (dados != ""){
+                // Salvar o log no nível debug
+                logger.debug("Excluídos todos os pedidos!");
                 knex('pedidos')
                     .del()
                     .then(res.status(200).json( {
@@ -177,6 +207,8 @@ routerAPI.delete('/pedidos', (req, res) => {
             }
         })
     .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao excluir os pedidos");
         res.json ({ message: `Erro ao excluir pedidos: ${err.message}` });
     })
 });

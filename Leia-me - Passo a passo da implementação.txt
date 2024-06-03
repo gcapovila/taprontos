@@ -77,11 +77,20 @@ Itens "Em progresso" da planilha de requisitos:
   CRUD para os usuários atendentes (login)
 
 16 - Criado arquivo ".env" para armazenar as variáveis de ambiente
+  Fonte:
+    https://www.freecodecamp.org/portuguese/news/como-usar-variaveis-de-ambiente-do-node-com-um-arquivo-dotenv-para-node-js-e-npm/
+    https://edmilton-vinicius.medium.com/vari%C3%A1veis-de-ambiente-no-node-js-com-env-7a8fa963f9b7
   Instalado o dotenv utilizando o comando "npm install dotenv"
   Criadas, no arquivo, as variáveis "PORT" (com valor 3000) e "LOCAL_HOST" (com valor '127.0.0.1')
   Alterado o arquivo "server.js" para chamar essas variáveis
 
-17 - 
+17 - Criado o arquivo "logger.js", com código responsável por salvar os logs no arquivo "logs/registro_eventos.log"
+  Fonte:
+    https://celke.com.br/artigo/como-criar-log-com-nodejs
+  Instalado o módulo Winston (gerenciador de logs): "npm install --save winston"
+  Importado o logger no início do arquivo routerAPI.js
+  Em cada uma das rotas (get, post, put, patch, delete), incluído comando para registrar no log a ação
+
 
 --------------------------------------------------------------
 
