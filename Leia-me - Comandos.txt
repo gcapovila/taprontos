@@ -6,6 +6,7 @@ npm install nodemon -g
 npm install ejs
 npm install dotenv
 npm install --save winston
+npm install --save-dev jest supertest
 
 Para iniciar a aplicação:
   Botão Run do repl.it está funcionando
@@ -13,6 +14,10 @@ Para iniciar a aplicação:
   nodemon server.js
     ou
   npm start
+
+Para rodar os testes automatizados 
+    npm test
+  OBS: antes de rodar o test, parar o servidor. Ele NÃO PODE ESTAR RODANDO, pois o jest vai iniciá-lo
 
 Instalação do pacote do Knex no projeto (knex é um gerenciador de banco de dados)
     npm install knex --save

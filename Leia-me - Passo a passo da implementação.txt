@@ -71,9 +71,11 @@ A página aguarda_senha.html está associada ao arquivo scriptAguardaSenha, que 
 --------------------------------------------------------------
 
 Itens "Em progresso" da planilha de requisitos:
-  Configurações como variáveis de ambiente
-  Registro de eventos (logs)
+  Pipeline - tarefas de build e deploy
+  Configurações como variáveis de ambiente - OK
+  Registro de eventos (logs) - OK
   Automação de testes
+  Recurso especial tecnológico
   CRUD para os usuários atendentes (login)
 
 16 - Criado arquivo ".env" para armazenar as variáveis de ambiente
@@ -87,14 +89,31 @@ Itens "Em progresso" da planilha de requisitos:
 17 - Criado o arquivo "logger.js", com código responsável por salvar os logs no arquivo "logs/registro_eventos.log"
   Fonte:
     https://celke.com.br/artigo/como-criar-log-com-nodejs
+    https://stackoverflow.com/questions/10271373/node-js-how-to-add-timestamp-to-logs-using-winston-library
   Instalado o módulo Winston (gerenciador de logs): "npm install --save winston"
   Importado o logger no início do arquivo routerAPI.js
   Em cada uma das rotas (get, post, put, patch, delete), incluído comando para registrar no log a ação
 
+18 - Implementados testes unitários de cada um dos endpoints (CRUD) da API
+  Fontes:
+    Aulas da matéria de Qualidade de Software
+    https://dev.to/nedsoft/testing-nodejs-express-api-with-jest-and-supertest-1km6
+    "npm test" para rodar os testes automatizados (o servidor NÃO PODE ESTAR RODANDO, pois o jest vai iniciá-lo)
+  Instalado o jest (módulo para testes automatizados): "npm install --save-dev jest supertest"
+  Alterado package.json, inserindo script de testes com jest
+  Criado diretório "tests", e dentro dele, o arquivo "testesUnitarios.spec.js", que vai conter os cenários
+  Criados os seguintes cenários de testes (seguindo exemplos da aula e outras buscas em fóruns de perguntas na internet):
+    Criar pedido (POST)
+    GET geral
+    GET passando id
+    GET passando senha
+    Alterar o status (usando PATCH)
+    Alterar o pedido completo (PUT)
+    Excluir pedido (DELETE)
 
 --------------------------------------------------------------
 
 PRÓXIMOS PASSOS:
 
-1 - Criar funcionalidade de mensagem - Vamos criar mesmo?
-2 - Remover campo "Descreva brevemente os itens do pedido"
+1 - Criar funcionalidade de mensagem - vamos criar mesmo?
+2 - Remover campo "Itens do pedido" - o campo foi transformado em opcional - vamos remover completamente?

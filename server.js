@@ -38,3 +38,5 @@ const servidor = process.env.LOCAL_HOST
 app.listen(port, function () {
     console.log(`Servidor rodando em http://${servidor}:${port}`);
 });
+
+module.exports = app;
