@@ -1,17 +1,11 @@
-name: taprontos-pipeline
+name: TaProntos
 
 on:
   push:
     branches: [ "main" ]
     
 jobs:
-  exibir_mensagem_no_console:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Executa comando para exibir mensagem
-        run: echo "Job da Pipeline disparado com sucesso"
-
-  instalar_node:
+  Installation:
     runs-on: ubuntu-latest
     steps:
       - name: Configurar Node 14 usando action do catálogo do Marketplace
@@ -21,12 +15,28 @@ jobs:
       - name: Mostrar versão do Node que foi configurada
         run: node --version
 
-  fazer_checkout_do_repositorio:
+  Checkout:
     runs-on: ubuntu-latest
-    needs: instalar_node
-    name: Ação que faz o checkout no repositório GIT    
+    needs: Installation
+    name: Realizar o checkout no repositório GIT    
     steps:
       - name: Fazer o checkout usando action do catálogo do Marketplace
         uses: actions/checkout@v2
-      - name: Exibir um Hello World no console
-        run: echo "Hello, world!"
+
+  Run: 
+    runs-on: ubuntu-latest
+    needs: Checkout
+    name: Disparar build
+    steps:
+      - name: Execução da aplicação
+        run: npm run build
+
+  Tests: 
+    runs-on: ubuntu-latest
+    name: Disparar testes
+    steps: 
+      - name: Execução dos testes unitários
+        run: |
+          npm install --save-dev jest supertest
+          npm test
+  
