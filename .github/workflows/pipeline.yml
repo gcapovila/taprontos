@@ -36,10 +36,11 @@ jobs:
     name: Deploy
     steps:
       - name: Fazer o Deploy do código no servidor hospedado na plataforma Render
-        uses: JorgeLNJunior/render-deploy@v1.4.4        
+        uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service_id: ${{ vars.RENDER_SERVICE_ID }}
-          api_key: ${{ vars.RENDER_API_KEY }}
+          service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.MY_RENDER_API_KEY }}
+          wait-for-success: true
 
   Execute: 
     runs-on: ubuntu-latest
