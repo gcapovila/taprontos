@@ -25,20 +25,22 @@ jobs:
     steps:
       - name: Fazer o checkout usando action do catálogo do Marketplace
         uses: actions/checkout@v2
+        
+  Tests: 
+    runs-on: ubuntu-latest
+    needs: Checkout
+    name: Tests
+    steps: 
+      - name: Execução dos testes unitários
+        run: npm test
 
   Run: 
     runs-on: ubuntu-latest
-    needs: Checkout
+    needs: Tests
     name: Run
     steps:
       - name: Execução da aplicação
         run: npm start
 
-  Tests: 
-    runs-on: ubuntu-latest
-    needs: Run
-    name: Tests
-    steps: 
-      - name: Execução dos testes unitários
-        run: npm test
+
   
