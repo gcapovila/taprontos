@@ -33,6 +33,8 @@ jobs:
     needs: Checkout
     name: Execute
     steps:
+      - name: mostra diretorio atual
+        run: pwd
       - name: Execução da aplicação
         run: npm start
         
