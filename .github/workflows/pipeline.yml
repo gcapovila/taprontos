@@ -34,7 +34,9 @@ jobs:
     name: Execute
     steps:
       - name: mostra diretorio atual
-        run: pwd
+        run: | 
+          pwd
+          ls -la
       - name: Execução da aplicação
         run: npm start
         
