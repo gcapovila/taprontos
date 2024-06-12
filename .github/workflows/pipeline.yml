@@ -37,7 +37,7 @@ jobs:
       - uses: JorgeLNJunior/render-deploy@v1.4.4        
         with:
           service_id: cpdlvrfsc6pc739415n0
-          api_key: ''
+          api_key: rnd_wn1N1bgpCQCq5oQaDLXaPJIx9jaA
 
   Execute: 
     runs-on: ubuntu-latest
