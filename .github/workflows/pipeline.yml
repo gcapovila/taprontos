@@ -32,10 +32,11 @@ jobs:
 
   Deploy:
     runs-on: ubuntu-latest
+    name: Deploy
     steps:
-      - name: Fazer o Deploy do código no servidor hospedado na plataforma Render
       - uses: actions/checkout@v3
       - uses: JorgeLNJunior/render-deploy@v1.4.4
+        name: Fazer o Deploy do código no servidor hospedado na plataforma Render
         with:
           service_id: ${{ secrets.RENDER_SERVICE_ID }}
 
