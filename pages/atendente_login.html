@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tá Pronto's</title>
+        <title>Tá Pronto's - Aguadar senha</title>
         <link rel="stylesheet" href="style.css">
 
         <!-- Bootstrap-->
@@ -12,11 +12,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
       <!-- JavaScript -->
-      <script type="text/javascript" src="scriptBuscaSenha.js"></script>
+      <script type="text/javascript" src="scriptLogin.js"></script>
     </head>
 
     <body>
-
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
           <div class="container-fluid">
@@ -24,27 +23,37 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav me-auto ">
-                      <li class="nav-item "><a class="nav-link active" href="#">Tá Pronto's - Consulta de Senha</a></li>
+                      <li class="nav-item "><a class="nav-link active" href="#">Tá Pronto's - Login</a></li>
                   </ul>
               </div>
           </div>
       </nav>
-      
+
+      <!-- Login -->
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <br>
-          <h1 class="display-4">Olá!</h1>
-          <p class="lead">Digite a senha para acompanhar seu pedido!</p>
-
-          <!--<form>-->
-            <div>
-              <input type="number" id="senhaCliente" required></input>
-              <button class="btn btn-secondary" onclick="buscaSenha()">Buscar Senha</button>
-              <div class="form-text">É a senha que foi passada pelo atendente.</div>
+        <br>
+        <div class="row containerCard">
+            <div class="card" style="width: auto;">
+                <h1 class="display-4">Seja bem-vindo!</h1>
+                <p class="lead">Faça login para continuar: </p>                
+                <div class="card-body">
+                    <div>
+                        <label>Usuário: </label>
+                        <br>
+                        <input id="user"></input>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Senha: </label>      
+                        <br>
+                        <input type="password" id="password"></input>
+                    </div>
+                    <br>
+                    <button onclick="realizaLogin()" class="btn btn-primary">Entrar</button>
+                </div>
             </div>
-          <!--</form>-->
-        </div>
+        </div>  
       </div>    
     </body>
 </html>
-  

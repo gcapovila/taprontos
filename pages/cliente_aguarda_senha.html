@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tá Pronto's - Aguadar senha</title>
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+      <!-- JavaScript -->
+      <script type="text/javascript" src="scriptAguardaSenha.js"></script>
+    </head>
+
+    <body>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+          <div class="container-fluid">
+              <img src="https://raw.githubusercontent.com/10Daniele/imagensTaProntos/main/TaProntosLogo.png" alt="Minha Imagem" width="90px">
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto ">
+                      <li class="nav-item "><a class="nav-link active" href="#">Tá Pronto's - Consulta de Senha</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+      <!-- Dados da senha buscada -->
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <br>
+          <p class="lead">Sua senha: </p>
+          <h1 class="display-4" id="exibeSenha">0000</h1>
+
+          
+          <br>
+          <p class="lead" id="situacaoPedido">Situação do seu pedido: </p>
+
+          <div id="barraProgresso"></div>          
+          <!--
+          Pedido na fila de espera = 30%
+          Pedido em preparação = 70%
+          Pedido pronto! = 100%
+          Pedido entregue! = 100%
+          -->
+
+          <br/><br/>
+
+          <div>
+              <button onclick="window.location.href='/busca_senha'" class="btn btn-primary">Voltar</button>          
+        </div>
+            
+      </div>    
+    </body>
+</html>

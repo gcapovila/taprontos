@@ -8,16 +8,17 @@ const path = require('path');
 // Modulo para ler o arquivo .env
 require('dotenv').config();
 
-// Sempre que eu acessar esta rota , vai abrir o 'index.html' da pasta pages
+// Rotas de telas do atendente
 app.use('/', express.static(path.join(__dirname, '/pages')));
+app.use('/lista_pedidos', express.static(path.join(__dirname, '/pages/atendente_lista_pedidos.html')));
+app.use('/altera_status', express.static(path.join(__dirname, '/pages/atendente_altera_status.html')));
+app.use('/incluir_pedido', express.static(path.join(__dirname, '/pages/atendente_inclui_pedido.html')));
+app.use('/mostra_qrCode', express.static(path.join(__dirname, '/pages/atendente_mostra_qrCode.html')));
+app.use('/login', express.static(path.join(__dirname, '/pages/atendente_login.html')));
 
-// Mapeando as demais telas
-app.use('/lista_pedidos', express.static(path.join(__dirname, '/pages/lista_pedidos.html')));
-app.use('/altera_status', express.static(path.join(__dirname, '/pages/altera_status.html')));
-app.use('/incluir_pedido', express.static(path.join(__dirname, '/pages/inclui_pedido.html')));
-app.use('/mostra_qrCode', express.static(path.join(__dirname, '/pages/mostra_qrCode.html')));
-app.use('/busca_senha', express.static(path.join(__dirname, '/pages/busca_senha.html')));
-app.use('/aguarda_senha', express.static(path.join(__dirname, '/pages/aguarda_senha.html')));
+// Rotas de telas do cliente
+app.use('/busca_senha', express.static(path.join(__dirname, '/pages/cliente_busca_senha.html')));
+app.use('/aguarda_senha', express.static(path.join(__dirname, '/pages/cliente_aguarda_senha.html')));
 
 // Configurando rota que sera chamada ao acessar o caminho /api
 // Tudo que for chamado em /api vai chamar o codigo que esta na rota importada
@@ -31,7 +32,7 @@ app.use((req, res) => {
 
 /* O servidor local e a porta ficam armazenados como variavel de ambiente no arquivo .env
  * O codigo abaixo vai ler o arquivo '.env'. Para que isso seja possivel, é necessario
- * Rodar o comando 'npm install dotenv', e fazer o require para este modulo no comeco deste codigo */                       
+ * Rodar o comando 'npm install dotenv', e fazer o require para este modulo no comeco deste codigo */
 const port = process.env.PORT
 const servidor = process.env.LOCAL_HOST
 

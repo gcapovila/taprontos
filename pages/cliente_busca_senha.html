@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tá Pronto's</title>
+        <title>Tá Pronto's - Buscar Senha</title>
         <link rel="stylesheet" href="style.css">
 
         <!-- Bootstrap-->
@@ -12,10 +12,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
       <!-- JavaScript -->
-      <script type="text/javascript" src="scriptAguardaSenha.js"></script>
+      <script type="text/javascript" src="scriptBuscaSenha.js"></script>
     </head>
 
     <body>
+
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
           <div class="container-fluid">
@@ -28,32 +29,22 @@
               </div>
           </div>
       </nav>
-
-      <!-- Dados da senha buscada -->
+      
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <br>
-          <p class="lead">Sua senha: </p>
-          <h1 class="display-4" id="exibeSenha">0000</h1>
+          <h1 class="display-4">Olá!</h1>
+          <p class="lead">Digite a senha para acompanhar seu pedido!</p>
 
-          
-          <br>
-          <p class="lead" id="situacaoPedido">Situação do seu pedido: </p>
-
-          <div id="barraProgresso"></div>          
-          <!--
-          Pedido na fila de espera = 30%
-          Pedido em preparação = 70%
-          Pedido pronto! = 100%
-          Pedido entregue! = 100%
-          -->
-
-          <br/><br/>
-
-          <div>
-              <button onclick="window.location.href='/busca_senha'" class="btn btn-primary">Voltar</button>          
+          <!--<form>-->
+            <div>
+              <input type="number" id="senhaCliente" required></input>
+              <button class="btn btn-secondary" onclick="buscaSenha()">Buscar Senha</button>
+              <div class="form-text">É a senha que foi passada pelo atendente.</div>
+            </div>
+          <!--</form>-->
         </div>
-            
       </div>    
     </body>
 </html>
+  

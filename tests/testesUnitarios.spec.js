@@ -5,21 +5,6 @@ const request = require('supertest');
 let id_pedido = ""
 let senha_pedido = ""
 
-// describe('Sample Test', () => {
-//     it('should test that true === true', () => {
-//       expect(true).toBe(true)
-//     })
-//   })
-
-beforeAll(done => {
-    done()
-  })
-  
-  afterAll(done => {
-    app.close()
-    done()
-  })
-
 // TESTES DOS ENDPOINTS
 test('Criar um pedido', async () => {
     
