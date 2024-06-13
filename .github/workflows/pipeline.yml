@@ -1,8 +1,5 @@
 name: TaProntos
 
-env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
-
 on:
   push:
     branches: [ "main" ]
@@ -28,31 +25,20 @@ jobs:
     needs: Installation
     name: Checkout    
     steps:
-      - name: Add SSH key to chekout a private repo
-        uses: webfactory/ssh-agent@v0.5.4
-        with:
-          ssh-private-key: ${{ secrets.REPO_SSH_KEY }}
       - name: Fazer o checkout usando action do catálogo do Marketplace
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
-          persist-credentials: false
           path: ./
-          directory: ./
-
-  Test: 
-    runs-on: ubuntu-latest
-    needs: Checkout
-    name: Test
-    steps: 
-      - name: Execução dos testes unitários
-        run: npm test
 
   Build:
     runs-on: ubuntu-latest
     needs: Checkout
     steps:
+      - run: | 
+        pwd
+        ls -la
       - name: Instalar dependências
-        run: npm ci
+        run: cd ../.. && npm ci
       - name: Rodar script 'build' se ele existir no package-json
         run: npm run build --if-present
 
@@ -73,6 +59,12 @@ jobs:
     name: Execute
     steps:
       - name: Execução da aplicação
-        run: npm start
+        run: cd ../.. && npm start
         
-  
+  Test: 
+    runs-on: ubuntu-latest
+    needs: Checkout
+    name: Test
+    steps: 
+      - name: Execução dos testes unitários
+        run: cd ../.. && npm test
