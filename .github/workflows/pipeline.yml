@@ -1,5 +1,8 @@
 name: TaProntos
 
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
 on:
   push:
     branches: [ "main" ]
@@ -9,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Installation
     steps:
-      - name: Configurar Node 20 usando action do catálogo do Marketplace
-        uses: actions/setup-node@v4
+      - name: Configurar Node 14 usando action do catálogo do Marketplace
+        uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: '14'
       - name: Mostrar versão do Node que foi configurada
         run: node --version
       - name: Instalar npm
