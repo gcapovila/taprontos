@@ -35,8 +35,7 @@ jobs:
     needs: Checkout
     steps:
       - name: Instalar dependências
-        run: npm install
-        run: npm ci
+        run: npm init && npm install && npm ci
       - name: Rodar script 'build' se ele existir no package-json
         run: npm run build --if-present
 
