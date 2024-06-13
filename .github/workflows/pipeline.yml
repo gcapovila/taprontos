@@ -34,9 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: Checkout
     steps:
-      - run: | 
-        pwd
-        ls -la
+      - run: pwd && ls -la
       - name: Instalar dependências
         run: cd ../.. && npm ci
       - name: Rodar script 'build' se ele existir no package-json
