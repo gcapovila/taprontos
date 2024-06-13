@@ -1,12 +1,20 @@
 
 URL inicial da página:
-    http://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/
+    No Render:
+        https://taprontos.onrender.com/
+    No Repl.it:
+        http://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/
 
 Rotas da API para usar no Thunder Client:
-    Get geral e post: http://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/api/pedidos/
-    Delete TODOS: http://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/api/pedidos/
+    Get geral e post:
+        No Render: https://taprontos.onrender.com/api/pedidos/
+        No Repl.it: http://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/api/pedidos/
+    Delete TODOS:
+        No Render: https://taprontos.onrender.com/api/pedidos/
+        No Repl.it: http://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/api/pedidos/
     Get, delete, put e patch passando ID do pedido:
-      http://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/api/pedidos/1
+        No Render: https://taprontos.onrender.com/api/pedidos/1
+        No Repl.it: http://531ca0e4-f9f3-4035-a170-ea3ae44adf2b-00-2ra4djkhmcrjb.worf.replit.dev/api/pedidos/1
 
 Exemplo de JSON para fazer o post:
     {
@@ -14,3 +22,6 @@ Exemplo de JSON para fazer o post:
         "status": "1",
         "itens": "combo super e coca-cola"
     }
+
+Chave do Render (ferramenta de hostpedagem de servidor gratuita):
+    rnd_wn1N1bgpCQCq5oQaDLXaPJIx9jaA

@@ -71,7 +71,7 @@ A página aguarda_senha.html está associada ao arquivo scriptAguardaSenha, que 
 --------------------------------------------------------------
 
 Itens "Em progresso" da planilha de requisitos:
-  Pipeline - tarefas de build e deploy
+  Pipeline - tarefas de build e deploy - OK
   Configurações como variáveis de ambiente - OK
   Registro de eventos (logs) - OK
   Automação de testes
@@ -110,6 +110,35 @@ Itens "Em progresso" da planilha de requisitos:
     Alterar o status (usando PATCH)
     Alterar o pedido completo (PUT)
     Excluir pedido (DELETE)
+
+--------------------------------------------------------------
+
+19 - Criado um novo servidor (pois a hospedagem no Repl.it não é mais gratiuta)
+  Utilizada a plataforma Render, que também tem integração direta com o GitHub
+  Fonte:
+    https://dev.to/zipy/best-node-js-free-hosting-services-out-there-29kc
+    (Somente o item 1, que é sobre o Render)
+  Nova URL da aplicação:
+    https://taprontos.onrender.com/
+
+20 - Realizados ajustes na Pipeline do GitHub Actions
+  Renomeados e reorganizados os jobs existentes
+  Criado job para executar os testes automatizados em jest
+
+21 - Criado job "Build"
+  Fonte:
+    https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+22 - Criado job para executar o deploy no servidor Render
+  Fonte:
+      https://github.com/marketplace/actions/deploy-to-render
+      https://github.com/marketplace/actions/render-deploy-action  
+  Acessadas as configurações do servidor criado no Render, e copiado o ID dele:
+      srv-cpdlvrfsc6pc739415n0
+  Acessada a configuração da conta do Render e gerada uma chave para acessá-lo:
+      rnd_wn1N1bgpCQCq5oQaDLXaPJIx9jaA
+  Inseridos estes valores como "secrets" --> "Repository secrets" nas configurações do GitHub
+  Criado Job "Deploy-on-Cloud" na pipeline
 
 --------------------------------------------------------------
 
