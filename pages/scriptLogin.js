@@ -14,7 +14,7 @@ function realizaLogin() {
 
 function validaLogin(email, password){
   // Executar GET para comparar email e senha
-  const caminho = '/api/usuario/' + email;
+  const caminho = '/api/usuarios/' + email;
 
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.open('GET', caminho);
@@ -40,6 +40,7 @@ function validaLogin(email, password){
         if(emailRetornado == email && senhaRetornada == password){
           localStorage.setItem('email', emailRetornado);
           localStorage.setItem('nome', nomeRetornado);
+
           window.location.href = '/';
         }
         else{
@@ -49,3 +50,9 @@ function validaLogin(email, password){
     } 
   }
 }
+
+function limparLocalStorage(){
+  localStorage.clear();
+}
+
+window.onload = limparLocalStorage;

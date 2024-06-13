@@ -213,5 +213,30 @@ routerAPI.delete('/pedidos', (req, res) => {
     })
 });
 
+// ------------------------------------------------------
+// Login 
+
+// GET para obter o usuário - /usuario/email
+routerAPI.get('/usuarios/:email', (req, res) => {
+    let email = req.params.email;
+    knex('usuarios').where('email', email)
+        .then((dados) => {
+            if (dados != ""){
+                // Salvar o log no nível debug
+                logger.debug("Tentativa de login com o usuário " + email);
+                res.json(dados);
+            } else {
+                res.json({
+                    message: `Usuário com email ${email} não encontrado`
+                })
+            }
+        })
+    .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao obter usuário de email " + email);
+        res.json ({ message: `Erro ao localizar usuário: ${err.message}` });
+    })
+});
+
 // Exporta, ou seja, transforma em uma biblioteca que pode ser importada em outro codigo
 module.exports = routerAPI;

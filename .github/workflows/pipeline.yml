@@ -28,7 +28,8 @@ jobs:
       - name: Fazer o checkout usando action do catálogo do Marketplace
         uses: actions/checkout@v2
         with:
-          path: ./        
+          path: ./
+          
   Deploy:
     runs-on: ubuntu-latest
     needs: Checkout

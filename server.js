@@ -15,6 +15,10 @@ app.use('/altera_status', express.static(path.join(__dirname, '/pages/atendente_
 app.use('/incluir_pedido', express.static(path.join(__dirname, '/pages/atendente_inclui_pedido.html')));
 app.use('/mostra_qrCode', express.static(path.join(__dirname, '/pages/atendente_mostra_qrCode.html')));
 app.use('/login', express.static(path.join(__dirname, '/pages/atendente_login.html')));
+app.use('/incluir_atendente', express.static(path.join(__dirname, '/pages/atendente_inclui_atendente.html')));
+app.use('/alterar_atendente', express.static(path.join(__dirname, '/pages/atendente_altera_atendente.html')));
+app.use('/excluir_atendente', express.static(path.join(__dirname, '/pages/atendente_exclui_atendente.html')));
+app.use('/altera_dados', express.static(path.join(__dirname, '/pages/atendente_altera_dados.html')));
 
 // Rotas de telas do cliente
 app.use('/busca_senha', express.static(path.join(__dirname, '/pages/cliente_busca_senha.html')));
