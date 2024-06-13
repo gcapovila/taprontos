@@ -15,5 +15,9 @@ jobs:
           node-version: '18.x'
       - name: Instalar dependencias
         run: npm install
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Instalar jest
+        run: npm install --save-dev jest supertest
       - name: Rodar testes de unidade com Jest
-        run: npx test
+        run: npm test
