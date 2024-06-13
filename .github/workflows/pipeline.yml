@@ -5,19 +5,50 @@ on:
     branches: [ "main" ]
     
 jobs:
+  Installation:
+    runs-on: ubuntu-latest
+    name: Installation
+    steps:
+      - name: Configurar Node 14 usando action do catálogo do Marketplace
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Mostrar versão do Node que foi configurada
+        run: node --version
+      - name: Instalar npm
+        run: npm install
+      - name: Instalar Jest
+        run: npm install --save-dev jest supertest
+
+  Checkout:
+    runs-on: ubuntu-latest
+    needs: Installation
+    name: Checkout    
+    steps:
+      - name: Fazer o checkout usando action do catálogo do Marketplace
+        uses: actions/checkout@v2
+        with:
+          path: ./        
+  Deploy:
+    runs-on: ubuntu-latest
+    needs: Checkout
+    name: Deploy-on-Cloud
+    steps:
+      - name: Fazer o Deploy do código no servidor hospedado em nuvem na plataforma Render
+        uses: JorgeLNJunior/render-deploy@v1.4.4
+
+  Execute: 
+    runs-on: ubuntu-latest
+    needs: Deploy-on-Cloud
+    name: Execute
+    steps:
+      - name: Execução da aplicação
+        run: npm start
+        
   Test: 
     runs-on: ubuntu-latest
+    needs: Execute
+    name: Test
     steps: 
-      - uses: actions/checkout@v3
-      - name: Usar Node 18.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
-      - name: Instalar dependencias
-        run: npm install
-      - name: Instalar dependencias
-        run: npm ci
-      - name: Instalar jest
-        run: npm install --save-dev jest supertest
-      - name: Rodar testes de unidade com Jest
+      - name: Execução dos testes unitários
         run: npm test
