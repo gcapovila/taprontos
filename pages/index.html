@@ -31,15 +31,15 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administração</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Incluir atendente</a></li>
-                                <li><a class="dropdown-item" href="#">Alterar atendente</a></li>
-                                <li><a class="dropdown-item" href="#">Execluir atendente</a></li>
+                                <li><a class="dropdown-item" href="/incluir_atendente">Incluir atendente</a></li>
+                                <li><a class="dropdown-item" href="/alterar_atendente">Alterar atendente</a></li>
+                                <li><a class="dropdown-item" href="/excluir_atendente">Execluir atendente</a></li>
                             </ul>
                         </li>      
                         <div class="btn-group">
-                          <button type="button" class="btn btn-Light dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Olá, Fulano</button>
+                          <button type="button" class="btn btn-Light dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Usuário</button>
                           <ul class="dropdown-menu dropdown-menu-lg-end">
-                            <li><a class="dropdown-item" href="#">Alterar meus dados</a></li>
+                            <li><a class="dropdown-item" href="/altera_dados">Alterar meus dados</a></li>
                             <li><a class="dropdown-item" href="/login">Sair</a></li>
                           </ul>
                         </div>
@@ -49,7 +49,7 @@
         </nav>
         
         <!-- Cards -->
-        <div class="container">
+        <div class="container" id="conteudo" style="display: none;">
             <br>
             <h2>Olá, Fulano!</h2>
             <p>Seja bem-vindo ao <b>Tá Pronto's</b>! O que deseja fazer agora?</p>
@@ -84,9 +84,18 @@
                         <a href="/mostra_qrCode" class="btn btn-secondary">Mostrar QR Code</a>
                     </div>
                 </div>
-
             </div>
-        </div>
-        
+        </div>   
+        <div id="naoLogado"></div>
+
+        <script>
+            if (localStorage.getItem('nome')) {
+              document.getElementById('conteudo').style.display = 'block';
+            }
+            else{
+                document.getElementById('naoLogado').innerHTML = `<div class="alert alert-danger" role="alert">Usuário não logado. Clique aqui para acessar: <a href="/login" class="alert-link">Acessar</a>
+</div>`;
+            }
+        </script>
     </body>
 </html>

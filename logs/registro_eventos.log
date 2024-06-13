@@ -6,3 +6,14 @@
 {"level":"debug","message":"Pedido de ID 20 alterado","timestamp":"12/06/2024 00:47:24"}
 {"level":"debug","message":"Obtendo o pedido de ID 20","timestamp":"12/06/2024 00:47:24"}
 {"level":"debug","message":"Pedido de ID 20 excluído","timestamp":"12/06/2024 00:47:24"}
+{"level":"error","message":"Erro ao obter usuário de email admin@admin.com","timestamp":"13/06/2024 01:27:01"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 01:34:42"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 01:36:23"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 01:36:36"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 01:43:57"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 01:44:20"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 01:44:28"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 01:46:42"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 01:50:21"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 01:52:37"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"13/06/2024 02:02:35"}
