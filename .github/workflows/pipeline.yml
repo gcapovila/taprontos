@@ -28,6 +28,7 @@ jobs:
       - name: Fazer o checkout usando action do catálogo do Marketplace
         uses: actions/checkout@v2
         with:
+          persist-credentials: false
           path: ./
 
   Build:
