@@ -55,23 +55,6 @@ jobs:
       - name: Execução dos testes unitários
         run: npm test
 
-  # Test: 
-  # runs-on: ubuntu-latest
-  # steps: 
-  #   - uses: actions/checkout@v3
-  #   - name: Usar Node 18.x
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: '18.x'
-  #   - name: Instalar dependencias
-  #     run: npm install
-  #   - name: Instalar dependencias
-  #     run: npm ci
-  #   - name: Instalar jest
-  #     run: npm install --save-dev jest supertest
-  #   - name: Rodar testes de unidade com Jest
-  #     run: npm test
-
   # Installation:
   #   runs-on: ubuntu-latest
   #   name: Installation

@@ -74,7 +74,7 @@ Itens "Em progresso" da planilha de requisitos:
   Pipeline - tarefas de build e deploy - OK
   Configurações como variáveis de ambiente - OK
   Registro de eventos (logs) - OK
-  Automação de testes
+  Automação de testes - OK
   Recurso especial tecnológico
   CRUD para os usuários atendentes (login)
 
