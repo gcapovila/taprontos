@@ -5,22 +5,16 @@ on:
     branches: [ "main" ]
     
 jobs:  
-  Checkout:
+  Build:
     runs-on: ubuntu-latest
-    name: Checkout 
+    name: Build 
     steps:
       - name: Fazer o checkout usando action do catálogo do Marketplace
-        uses: actions/checkout@v3
-
-  Build: 
-    runs-on: ubuntu-latest
-    needs: Checkout
-    name: Build
-    steps:
-      - name: Configurar Node 18 usando action do catálogo do Marketplace
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v2
+      - name: Configurar Node 14 usando action do catálogo do Marketplace
+        uses: actions/setup-node@v2
         with:
-          node-version: '18.x'
+          node-version: '14'
       - name: Mostrar versão do Node que foi configurada
         run: node --version
       - name: Instalar npm
@@ -34,7 +28,7 @@ jobs:
 
   Deploy-on-Cloud:
     runs-on: ubuntu-latest
-    needs: Checkout
+    needs: Build
     name: Deploy on Cloud
     steps:
       - name: Fazer o Deploy do código no servidor hospedado em nuvem na plataforma Render
@@ -48,6 +42,16 @@ jobs:
     needs: Build
     name: Test
     steps:
+      - name: Fazer o checkout usando action do catálogo do Marketplace
+        uses: actions/checkout@v2
+      - name: Configurar Node 14 usando action do catálogo do Marketplace
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Mostrar versão do Node que foi configurada
+        run: node --version
+      - name: Instalar Jest
+        run: npm install --save-dev jest supertest
       - name: Execução dos testes unitários
         run: npm test
 
