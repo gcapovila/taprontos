@@ -176,7 +176,7 @@ routerAPI.delete('/pedidos/:id', (req, res) => {
                     )
             } else {
                 res.json({
-                    message: `Pedido de ID ${id} não encontrado!`
+                    message: `Pedido de ID ${id} não encontrado`
                   })
             }
         })

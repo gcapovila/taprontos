@@ -40,8 +40,19 @@ app.use((req, res) => {
 const port = process.env.PORT
 const servidor = process.env.LOCAL_HOST
 
-app.listen(port, function () {
+// Inicia o servidor
+const server = app.listen(port, () => {
     console.log(`Servidor rodando em http://${servidor}:${port}`);
 });
+  
+// Adiciona a função closeServer como um método do servidor
+server.closeServer = () => {
+    server.close((err) => {
+      if (err) {
+        console.error('Erro ao fechar o servidor:', err);
+      }
+    });
+};
 
-module.exports = app;
+// Exporta o servidor com o método closeServer
+module.exports = server;

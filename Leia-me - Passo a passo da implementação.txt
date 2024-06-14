@@ -96,20 +96,22 @@ Itens "Em progresso" da planilha de requisitos:
 
 18 - Implementados testes unitários de cada um dos endpoints (CRUD) da API
   Fontes:
-    Aulas da matéria de Qualidade de Software
-    https://dev.to/nedsoft/testing-nodejs-express-api-with-jest-and-supertest-1km6
-    "npm test" para rodar os testes automatizados (o servidor NÃO PODE ESTAR RODANDO, pois o jest vai iniciá-lo)
+      Aulas da matéria de Qualidade de Software
+      https://dev.to/nedsoft/testing-nodejs-express-api-with-jest-and-supertest-1km6
   Instalado o jest (módulo para testes automatizados): "npm install --save-dev jest supertest"
   Alterado package.json, inserindo script de testes com jest
+      Foi necessário colocar o comando "--forceExit" pois o jest ficava executando "eternamente"
+      "test": "jest --forceExit"
   Criado diretório "tests", e dentro dele, o arquivo "testesUnitarios.spec.js", que vai conter os cenários
   Criados os seguintes cenários de testes (seguindo exemplos da aula e outras buscas em fóruns de perguntas na internet):
-    Criar pedido (POST)
-    GET geral
-    GET passando id
-    GET passando senha
-    Alterar o status (usando PATCH)
-    Alterar o pedido completo (PUT)
-    Excluir pedido (DELETE)
+      Criar pedido (POST)
+      GET geral
+      GET passando id
+      GET passando senha
+      Alterar o status (usando PATCH)
+      Alterar o pedido completo (PUT)
+      Excluir pedido (DELETE)
+  "npm test" para rodar os testes automatizados (o servidor NÃO PODE ESTAR RODANDO, pois o jest vai iniciá-lo)
 
 --------------------------------------------------------------
 
