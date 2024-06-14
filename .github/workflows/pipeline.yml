@@ -7,11 +7,13 @@ on:
 jobs:
   Build: 
     runs-on: ubuntu-latest
-    steps: 
-      - name: Configurar Node 14 usando action do catálogo do Marketplace
-        uses: actions/setup-node@v2
+    steps:
+      - name: Fazer o checkout usando action do catálogo do Marketplace
+        uses: actions/checkout@v3
+      - name: Configurar Node 18 usando action do catálogo do Marketplace
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18.x'
       - name: Mostrar versão do Node que foi configurada
         run: node --version
       - name: Instalar npm
@@ -20,8 +22,6 @@ jobs:
         run: npm ci
       - name: Rodar script 'build' se ele existir no package-json
         run: npm run build --if-present
-      - name: Fazer o checkout usando action do catálogo do Marketplace
-        uses: actions/checkout@v2
       - name: Execução da aplicação
         run: npm start
 
@@ -90,15 +90,15 @@ jobs:
     needs: Build
     name: Test
     steps:
-      - name: Configurar Node 14 usando action do catálogo do Marketplace
-        uses: actions/setup-node@v2
+      - name: Fazer o checkout usando action do catálogo do Marketplace
+        uses: actions/checkout@v3
+      - name: Configurar Node 18 usando action do catálogo do Marketplace
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18.x'
       - name: Mostrar versão do Node que foi configurada
         run: node --version
       - name: Instalar Jest
         run: npm install --save-dev jest supertest
-      - name: Fazer o checkout usando action do catálogo do Marketplace
-        uses: actions/checkout@v2
       - name: Execução dos testes unitários
         run: npm test
