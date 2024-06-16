@@ -29,13 +29,28 @@
                         <li class="nav-item"><a class="nav-link" href="/mostra_qrCode">Mostrar QR Code</a></li>
                     </ul>
                 </div>
+                <div class="justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administração</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/consultar_atendente">Administrar Atendentes</a></li>
+                            </ul>
+                        </li>      
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-Light dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">Usuário</button>
+                          <ul class="dropdown-menu dropdown-menu-lg-end">
+                            <li><a class="dropdown-item" href="/login">Sair</a></li>
+                          </ul>
+                        </div>
+                    </ul>
+                </div>
             </div>
-        </nav>
-        
-        <br>
+        </nav>        
 
-        <div class="container">
-
+        <div class="container" id="conteudo" style="display: none;">
+            <br>
+            
             <!-- Breadcrumb --> 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -64,7 +79,17 @@
                 <button onclick="window.location.href='/incluir_pedido'" class="btn btn-primary">Incluir pedido</button>
             </div>
         </div>
+        <div id="naoLogado"></div>
         <br>
+        <script>
+            if (localStorage.getItem('nome')) {
+                document.getElementById('conteudo').style.display = 'block';
+            }
+            else{
+                document.getElementById('naoLogado').innerHTML = `<div class="alert alert-danger" role="alert">Usuário não logado. Clique aqui para acessar: <a href="/login" class="alert-link">Acessar</a>
+        </div>`;
+            }
+        </script>
     </body>
 
 </html>

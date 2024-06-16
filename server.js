@@ -18,7 +18,7 @@ app.use('/login', express.static(path.join(__dirname, '/pages/atendente_login.ht
 app.use('/incluir_atendente', express.static(path.join(__dirname, '/pages/atendente_inclui_atendente.html')));
 app.use('/alterar_atendente', express.static(path.join(__dirname, '/pages/atendente_altera_atendente.html')));
 app.use('/excluir_atendente', express.static(path.join(__dirname, '/pages/atendente_exclui_atendente.html')));
-app.use('/altera_dados', express.static(path.join(__dirname, '/pages/atendente_altera_dados.html')));
+app.use('/consultar_atendente', express.static(path.join(__dirname, '/pages/atendente_consulta_atendente.html')));
 
 // Rotas de telas do cliente
 app.use('/busca_senha', express.static(path.join(__dirname, '/pages/cliente_busca_senha.html')));
