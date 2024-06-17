@@ -238,5 +238,38 @@ routerAPI.get('/usuarios/:email', (req, res) => {
     })
 });
 
+// ------------------------------------------------------
+// reCAPTCHA
+
+routerAPI.post('/captcha/', (req, res) => {
+
+    // Código de verificação retornado ao validar o captcha na tela
+    const response_key = req.body.token;
+    // Chave configurada como "Chave secreta" no site do google (https://www.google.com/recaptcha/admin/)
+    const secret_key = '6Ld9aPopAAAAAFSYljfDjLInUBIaDhW6J0zGb3R-';
+
+    // API do Google que verifica se a chave e o token obtidos são validos
+    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${response_key}`;
+
+    // Chamando a API do Google via POST
+    fetch(url, {
+        method: "post",
+    })
+    .then((response) => response.json())
+    .then((google_response) => {    
+        if (google_response.success == true) {
+            // logger.debug("Captcha validado com sucesso");
+            return res.status(200).json({ message: "Captcha validado com sucesso" });
+        } else {
+            logger.debug("Falha na validação do captcha na API do Google");
+            return res.status(400).json( { message: "Validação no Google falhou" });
+        }
+    })
+    .catch((error) => {
+        return res.json({ error });
+    });
+
+});
+
 // Exporta, ou seja, transforma em uma biblioteca que pode ser importada em outro codigo
 module.exports = routerAPI;

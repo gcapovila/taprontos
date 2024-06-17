@@ -118,20 +118,12 @@ Itens "Em progresso" da planilha de requisitos:
 19 - Criado um novo servidor (pois a hospedagem no Repl.it não é mais gratiuta)
   Utilizada a plataforma Render, que também tem integração direta com o GitHub
   Fonte:
-    https://dev.to/zipy/best-node-js-free-hosting-services-out-there-29kc
-    (Somente o item 1, que é sobre o Render)
+      https://dev.to/zipy/best-node-js-free-hosting-services-out-there-29kc
+      (Somente o item 1, que é sobre o Render)
   Nova URL da aplicação:
     https://taprontos.onrender.com/
 
-20 - Realizados ajustes na Pipeline do GitHub Actions
-  Renomeados e reorganizados os jobs existentes
-  Criado job para executar os testes automatizados em jest
-
-21 - Criado job "Build"
-  Fonte:
-    https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-22 - Criado job para executar o deploy no servidor Render
+20 - Criado job para executar o deploy no servidor Render
   Fonte:
       https://github.com/marketplace/actions/deploy-to-render
       https://github.com/marketplace/actions/render-deploy-action  
@@ -141,6 +133,39 @@ Itens "Em progresso" da planilha de requisitos:
       rnd_wn1N1bgpCQCq5oQaDLXaPJIx9jaA
   Inseridos estes valores como "secrets" --> "Repository secrets" nas configurações do GitHub
   Criado Job "Deploy-on-Cloud" na pipeline
+
+21 - Realizados ajustes na Pipeline do GitHub Actions
+  Fonte:
+      Aulas da matéria EAD "Cultura e Práticas Devops"
+      https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+  Renomeados e reorganizados os jobs existentes
+  Criado job para executar os testes automatizados em jest
+
+--------------------------------------------------------------
+
+22 - Funcionalidade de Login
+  Criada tela de Login
+  Criada a tabela de usuários no arquivo das migrations
+  Criado endpoint GET no routerAPI, para buscar usuário a partir de seu e-mail
+  Validação na tela para se o usuário não estiver logado, apresentar uma mensagem solicitanto que faça o login
+
+23 - Implementação de reCAPTCHA na tela de Login
+  Fonte:
+      https://www.rafaelwendel.com/2021/08/como-inserir-um-google-recaptcha-no-seu-site/      
+      https://acervolima.com/como-verificar-o-recaptcha-na-chamada-do-servidor-node-js/
+      https://pt.stackoverflow.com/questions/59952/como-implementar-recaptcha-do-google-no-meu-site
+      https://pankaj-kumar.medium.com/implementing-google-recaptcha-in-node-js-application-a2133a5deab7
+  Captcha gerado:
+      https://www.google.com/recaptcha/admin/site/704276605/settings
+      Chave de site: 6Ld9aPopAAAAAAaoccqGuSTXstpM0MBbT9lZkXGQ
+      Chave secreta: 6Ld9aPopAAAAAFSYljfDjLInUBIaDhW6J0zGb3R-
+  No routerAPI, foi criada a rota /api/captcha/, que vai receber como parâmetro o token e fazer a validação na API do Google
+  Na página de login, realizado import do script do Google com a API do Captcha
+    Incluído o elemento class="g-recaptcha" ao fim da página
+  No scriptLogin.js, na função validaLogin, foi acrescentada a chamada à rota /api/captcha/
+    É obtido da tela o token gerado no momento que o usuário valida o captcha, e esse token é passado para a rota
+    A rota, por sua vez, chama a API do Google que verifica se o token passado é valido
+    A rota responde sucesso para a função, que redireciona para a página inicial da tela após login
 
 --------------------------------------------------------------
 
