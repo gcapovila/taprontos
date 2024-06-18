@@ -269,5 +269,45 @@ routerAPI.get('/usuarios/:email', (req, res) => {
     })
 });
 
+// GET para obter todos os usuários
+routerAPI.get('/usuarios', (req, res) => {
+    knex('usuarios')
+    .then((dados) => {
+        res.json (dados);
+    }).catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao obter os atendentes");
+        res.json ({
+            message: `Erro ao obter os atendentes: ${err.message}`
+        });
+    })
+});
+
+// POST para criar um novo usuario
+routerAPI.post('/usuarios', (req, res) => {
+    console.log (req.body);
+    knex('usuarios')
+        .insert(req.body, ['id', 'nome', 'email', 'senha'])
+        .then((dados) => {
+            if (dados.length > 0) {
+                const id = dados[0].id;
+                const nome = dados[0].nome;
+                const email = dados[0].email;
+                const senha = dados[0].senha;
+                // Salvar o log no nível debug
+                logger.debug("Usuário adicionado com sucesso. ID: " + id + " | Nome: " + nome + " | Email: " + email + " | Senha: " + senha);
+                res.status(201).json( {
+                    message: 'Usuário adicionado com sucesso',
+                    data: { id, nome, email, senha }
+                });
+            }
+        })
+    .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao inserir pedido");
+        res.json ({ message: `Erro ao inserir pedido: ${err.message}` });
+    })
+});
+
 // Exporta, ou seja, transforma em uma biblioteca que pode ser importada em outro codigo
 module.exports = routerAPI;

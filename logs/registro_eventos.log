@@ -10,3 +10,7 @@
 {"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"16/06/2024 23:50:46"}
 {"level":"debug","message":"Falha na validação do captcha na API do Google","timestamp":"17/06/2024 14:40:07"}
 {"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"17/06/2024 14:41:35"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"18/06/2024 00:41:24"}
+{"level":"debug","message":"Tentativa de login com o usuário admin@admin.com","timestamp":"18/06/2024 00:42:14"}
+{"level":"debug","message":"Usuário adicionado com sucesso. ID: null | Nome: Danie | Email: dani@teste.com | Senha: dani","timestamp":"18/06/2024 01:44:33"}
+{"level":"debug","message":"Tentativa de login com o usuário dani@teste.com","timestamp":"18/06/2024 01:44:58"}
