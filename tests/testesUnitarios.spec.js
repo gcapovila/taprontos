@@ -349,14 +349,14 @@ describe("Teste dos endpoints referentes à entidade 'Usuário'", () => {
         
     });
 
-    test('Alterar o status de um usuário que não existe', async () => {
+    test('Alterar o nome de um usuário que não existe', async () => {
         
         // Ação do teste
         const responsePatch = await request(server)
             .patch('/api/usuarios/' + email)
             .send({
-                "senha": "teste3"
-            });
+                 "nome": "teste3"
+             });
 
         // Verificação do teste
         expect(responsePatch.body.message).toStrictEqual(`Usuário de email ${email} não encontrado`);
@@ -369,9 +369,7 @@ describe("Teste dos endpoints referentes à entidade 'Usuário'", () => {
         const responsePut = await request(server)
             .put('/api/usuarios/' + email)
             .send({
-                "id": id_usuario,
                 "nome": "Usuário teste",
-                "email": email,
                 "senha": "teste"
             });
 

@@ -76,7 +76,7 @@ Itens "Em progresso" da planilha de requisitos:
   Registro de eventos (logs) - OK
   Automação de testes - OK
   Recurso especial tecnológico (Captcha) - OK
-  CRUD para os usuários atendentes (login)
+  CRUD para os usuários atendentes (login) - OK
 
 16 - Criado arquivo ".env" para armazenar as variáveis de ambiente
   Fonte:
@@ -94,7 +94,7 @@ Itens "Em progresso" da planilha de requisitos:
   Importado o logger no início do arquivo routerAPI.js
   Em cada uma das rotas (get, post, put, patch, delete), incluído comando para registrar no log a ação
 
-18 - Implementados testes unitários de cada um dos endpoints (CRUD) da API
+18 - Implementados testes unitários de cada um dos endpoints (CRUD) da API, para a entidade 'Pedidos'
   Fontes:
       Aulas da matéria de Qualidade de Software
       https://dev.to/nedsoft/testing-nodejs-express-api-with-jest-and-supertest-1km6
@@ -105,10 +105,10 @@ Itens "Em progresso" da planilha de requisitos:
   Criado diretório "tests", e dentro dele, o arquivo "testesUnitarios.spec.js", que vai conter os cenários
   Criados os seguintes cenários de testes (seguindo exemplos da aula e outras buscas em fóruns de perguntas na internet):
       Criar pedido (POST)
-      GET geral
-      GET passando id
-      GET passando senha
-      Alterar o status (usando PATCH)
+      GET geral dos pedidos
+      GET passando id do pedido
+      GET passando senha do pedido
+      Alterar o status do pedido (usando PATCH)
       Alterar o pedido completo (PUT)
       Excluir pedido (DELETE)
   "npm test" para rodar os testes automatizados (o servidor NÃO PODE ESTAR RODANDO, pois o jest vai iniciá-lo)
@@ -166,6 +166,18 @@ Itens "Em progresso" da planilha de requisitos:
     É obtido da tela o token gerado no momento que o usuário valida o captcha, e esse token é passado para a rota
     A rota, por sua vez, chama a API do Google que verifica se o token passado é valido
     A rota responde sucesso para a função, que redireciona para a página inicial da tela após login
+
+24 - Finalização da implementação das telas referentes a atendente (usuário - para usar no login)
+  Criado demais endpoints no routerAPI, para entidade usuário: GET sem parâmetro, POST, PUT, PATCH, DELETE
+  Criadas telas de administrar usuários
+  Criados cenários de testes para a entidade 'Usuário':
+    Criar usuário (POST)
+    GET geral dos usuários
+    GET passando id
+    GET passando email do usuário
+    Alterar o nome do usuário (usando PATCH)
+    Alterar o usuário completo (PUT)
+    Excluir usuário (DELETE)
 
 --------------------------------------------------------------
 
