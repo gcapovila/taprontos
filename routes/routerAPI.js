@@ -245,7 +245,7 @@ routerAPI.delete('/pedidos', (req, res) => {
 });
 
 // ------------------------------------------------------
-// Login 
+// Usuário  
 
 // GET para obter o usuário - /usuario/email
 routerAPI.get('/usuarios/:email', (req, res) => {
@@ -254,7 +254,8 @@ routerAPI.get('/usuarios/:email', (req, res) => {
         .then((dados) => {
             if (dados != ""){
                 // Salvar o log no nível debug
-                logger.debug("Tentativa de login com o usuário " + email);
+                //logger.debug("Tentativa de login com o usuário " + email);
+                logger.debug("Acessado o usuário " + email);
                 res.json(dados);
             } else {
                 res.json({
@@ -295,7 +296,9 @@ routerAPI.post('/usuarios', (req, res) => {
                 const email = dados[0].email;
                 const senha = dados[0].senha;
                 // Salvar o log no nível debug
-                logger.debug("Usuário adicionado com sucesso. ID: " + id + " | Nome: " + nome + " | Email: " + email + " | Senha: " + senha);
+                logger.debug("Usuário adicionado com sucesso. ID: " + id + " | Nome: " + nome + " | Email: " + email
+                             // + " | Senha: " + senha + 
+                             );
                 res.status(201).json( {
                     message: 'Usuário adicionado com sucesso',
                     data: { id, nome, email, senha }
@@ -304,9 +307,109 @@ routerAPI.post('/usuarios', (req, res) => {
         })
     .catch((err) => {
         // Salvar o log no nível error
-        logger.error("Erro ao inserir pedido");
-        res.json ({ message: `Erro ao inserir pedido: ${err.message}` });
+        logger.error("Erro ao inserir usuário");
+        res.json ({ message: `Erro ao inserir usuário: ${err.message}` });
     })
+});
+
+// PATCH para alterar dados específicos do usuário
+routerAPI.patch('/usuarios/:email', (req, res) => { 
+    console.log (req.body);
+    let email = req.params.email;
+    knex('usuarios')
+        .where('email', email)
+        .update(req.body, ['email'])
+        .then((dados) => {
+            if (dados.length > 0) {
+                const email = dados[0].email
+                // Salvar o log no nível debug
+                logger.debug(`Usuário de email ${email} alterado com sucesso`);
+                res.status(201).json( {
+                    message: `Usuário de email ${email} alterado com sucesso`,
+                    data: { email }});
+            } else {
+                res.json({
+                    message: `Usuário de email ${email} não encontrado`
+                })
+            }
+        })
+    .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao alterar usuário de email " + email);
+        res.json ({ message: `Erro ao alterar usuário: ${err.message}` });
+    })
+});
+
+// PUT para alterar um usuário por completo
+routerAPI.put('/usuarios/:email', (req, res) => { 
+    console.log (req.body);
+    let email = req.params.email;
+    knex('usuarios')
+        .where('email', email)
+        .update(req.body, ['email'])
+        .then((dados) => {
+            if (dados.length > 0) {
+                const email = dados[0].email
+                // Salvar o log no nível debug
+                logger.debug(`Usuário de email ${email} alterado`);
+                res.status(201).json( {
+                    message: `Usuário de email ${email} alterado com sucesso`,
+                    data: { email }});
+            } else {
+                res.json({
+                    message: `Usuário de email ${email} não encontrado`
+                })
+            }
+        })
+    .catch((err) => {
+        // Salvar o log no nível error
+        logger.error("Erro ao alterar usuário de email " + email);
+        res.json ({ message: `Erro ao alterar usuário: ${err.message}` });
+    })
+});
+
+// DELETE para excluir um usuario
+routerAPI.delete('/usuarios/:email', (req, res) => {
+    let email = req.params.email;
+
+    knex('usuarios')
+        .where('email', email)
+        .then((dados) => {
+            if (dados.length > 0) {
+                // Salvando o email antes de excluí-lo
+                const emailExcluido = dados[0].email;
+
+                // Excluindo o usuário com o email encontrado
+                knex('usuarios')
+                    .where('email', email)
+                    .del()
+                    .then(() => {
+                        // Salvar o log no nível debug
+                        logger.debug(`Usuário de email ${emailExcluido} excluído`);
+
+                        // Responder com sucesso
+                        res.status(200).json({
+                            message: `Usuário de email ${emailExcluido} excluído com sucesso`,
+                            data: { email: emailExcluido }
+                        });
+                    })
+                    .catch((err) => {
+                        // Salvar o log no nível error
+                        logger.error(`Erro ao excluir usuário de email ${email}: ${err.message}`);
+                        res.status(500).json({ message: `Erro ao excluir usuário: ${err.message}` });
+                    });
+            } else {
+                // Se nenhum usuário foi encontrado com o email especificado
+                res.status(404).json({
+                    message: `Usuário de email ${email} não encontrado`
+                });
+            }
+        })
+        .catch((err) => {
+            // Salvar o log no nível error
+            logger.error(`Erro ao buscar usuário de email ${email}: ${err.message}`);
+            res.status(500).json({ message: `Erro ao buscar usuário: ${err.message}` });
+        });
 });
 
 // Exporta, ou seja, transforma em uma biblioteca que pode ser importada em outro codigo
