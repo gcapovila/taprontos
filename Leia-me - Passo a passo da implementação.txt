@@ -75,7 +75,7 @@ Itens "Em progresso" da planilha de requisitos:
   Configurações como variáveis de ambiente - OK
   Registro de eventos (logs) - OK
   Automação de testes - OK
-  Recurso especial tecnológico
+  Recurso especial tecnológico (Captcha) - OK
   CRUD para os usuários atendentes (login)
 
 16 - Criado arquivo ".env" para armazenar as variáveis de ambiente
