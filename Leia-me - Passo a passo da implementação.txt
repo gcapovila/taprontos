@@ -75,7 +75,7 @@ Itens "Em progresso" da planilha de requisitos:
   Configurações como variáveis de ambiente - OK
   Registro de eventos (logs) - OK
   Automação de testes - OK
-  Recurso especial tecnológico (Captcha) - OK
+  Recurso especial tecnológico (captcha) - OK
   CRUD para os usuários atendentes (login) - OK
 
 16 - Criado arquivo ".env" para armazenar as variáveis de ambiente
@@ -84,6 +84,7 @@ Itens "Em progresso" da planilha de requisitos:
     https://edmilton-vinicius.medium.com/vari%C3%A1veis-de-ambiente-no-node-js-com-env-7a8fa963f9b7
   Instalado o dotenv utilizando o comando "npm install dotenv"
   Criadas, no arquivo, as variáveis "PORT" (com valor 3000) e "LOCAL_HOST" (com valor '127.0.0.1')
+    Posteriormente, criada também a variável RECAPTCHA_SECRET_KEY, para ser usada pela rota /api/captcha/
   Alterado o arquivo "server.js" para chamar essas variáveis
 
 17 - Criado o arquivo "logger.js", com código responsável por salvar os logs no arquivo "logs/registro_eventos.log"
@@ -159,12 +160,18 @@ Itens "Em progresso" da planilha de requisitos:
       https://www.google.com/recaptcha/admin/site/704276605/settings
       Chave de site: 6Ld9aPopAAAAAAaoccqGuSTXstpM0MBbT9lZkXGQ
       Chave secreta: 6Ld9aPopAAAAAFSYljfDjLInUBIaDhW6J0zGb3R-
+      A chave de site fica na propriedade data-sitekey, direto no elemento do captcha (ver abaixo sobre a localização dele)
+      Já a chave secreta foi armazenada no .env como variável de ambiente
   No routerAPI, foi criada a rota /api/captcha/, que vai receber como parâmetro o token e fazer a validação na API do Google
+    A rota utiliza, para verificação:
+      O token gerado na tela assim que a pessoa resolve o enigma do Captcha
+      A chave secreta que vem da variável de ambiente
+    A rota chama a API do Google para validar estes dados, retornando sucesso ou erro
   Na página de login, realizado import do script do Google com a API do Captcha
     Incluído o elemento class="g-recaptcha" ao fim da página
   No scriptLogin.js, na função validaLogin, foi acrescentada a chamada à rota /api/captcha/
-    É obtido da tela o token gerado no momento que o usuário valida o captcha, e esse token é passado para a rota
-    A rota, por sua vez, chama a API do Google que verifica se o token passado é valido
+    É obtido da tela o token gerado no momento que o usuário resolve o captcha, e esse token é passado para a rota
+    A rota, por sua vez, chama a API do Google que verifica se o token passado (mais a chave secreta que vem do .env) é valido
     A rota responde sucesso para a função, que redireciona para a página inicial da tela após login
 
 24 - Finalização da implementação das telas referentes a atendente (usuário - para usar no login)
