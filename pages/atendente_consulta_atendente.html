@@ -106,9 +106,10 @@
 
     <br>
     <script>
-      if (localStorage.getItem("nome")) {
+      if (localStorage.getItem("nome")){
         document.getElementById("conteudo").style.display = "block";
-      } else {
+      } 
+      else{
         document.getElementById("naoLogado").innerHTML =
           `<div class="alert alert-danger" role="alert">Usuário não logado. Clique aqui para acessar: <a href="/login" class="alert-link">Acessar</a>
         </div>`;
