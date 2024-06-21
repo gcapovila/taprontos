@@ -120,7 +120,7 @@ function buscaDadosAtendente(){
   }
 }
 
-function confirmaAlteraAtendente(){
+function confirmaAlteracaoAtendente(){
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.open('PATCH', '/api/usuarios/' + localStorage.getItem('emailAlteracao'), true);
   xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
