@@ -1,1 +1,1 @@
-{"version":2,"languages":{"nodejs-npm":{"specfileHash":"214b3421e4dfa7993e85dad39f7ee3c4","lockfileHash":"d0df7b77a6ef4a0b8e352caff04e013a"}}}
+{"version":2,"languages":{"nodejs-npm":{"specfileHash":"214b3421e4dfa7993e85dad39f7ee3c4","lockfileHash":"d0df7b77a6ef4a0b8e352caff04e013a","guessedImports":["winston","dotenv","express"],"guessedImportsHash":"107fe49a744011c2bf83f26d9d64199e"}}}
