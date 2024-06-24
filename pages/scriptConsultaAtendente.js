@@ -51,31 +51,62 @@ function removeAtendente(email){
 }
 
 function incluiAtendente(){
-  const id = geraId();
+  if(!document.getElementById('nome').value){
+    alert("Por favor, preencha o campo Nome");
+  } 
+  else if(!document.getElementById('email').value){
+    alert("Por favor, preencha o campo Email");
+  }  
+  else if(!document.getElementById('senha').value){
+    alert("Por favor, preencha o campo Senha");
+  } 
+  else{
+    const id = geraId();
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
   
-  const xmlhttp = new XMLHttpRequest();
-  xmlhttp.open('POST', '/api/usuarios/', true);
-  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-
-  xmlhttp.send(JSON.stringify({
-    id: id,
-    nome: document.getElementById('nome').value,
-    email: document.getElementById('email').value,
-    senha: document.getElementById('senha').value
-  }));
-
-  xmlhttp.onreadystatechange = function(){
-    if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 201){
-      retorno = JSON.parse(xmlhttp.responseText);
-      alert("Usuário cadastrado com sucesso");
-      window.location.href = '/consultar_atendente';
-    } 
-    else if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 403){
-      retorno = JSON.parse(xmlhttp.responseText);
-      alert(retorno.message);        
+    // Função para calcular o hash da senha
+    async function hashSenha(senha) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(senha);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+      return hashHex;
     }
+  
+    // Função para enviar o usuário para o servidor
+    async function enviarUsuarioComHash() {
+      const senhaHash = await hashSenha(senha);
+  
+      const xmlhttp = new XMLHttpRequest();
+      xmlhttp.open('POST', '/api/usuarios/', true);
+      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  
+      xmlhttp.send(JSON.stringify({
+        id: id,
+        nome: nome,
+        email: email,
+        senha: senhaHash // Envie o hash da senha ao invés da senha em texto plano
+      }));
+  
+      xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 201){
+          const retorno = JSON.parse(xmlhttp.responseText);
+          alert("Usuário cadastrado com sucesso");
+          window.location.href = '/consultar_atendente';
+        } 
+        else if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 403){
+          const retorno = JSON.parse(xmlhttp.responseText);
+          alert(retorno.message);        
+        }
+      }
+    }  
+    enviarUsuarioComHash();
   }
 }
+
 
 function geraId() {
   let resultado = '';
@@ -114,35 +145,67 @@ function buscaDadosAtendente(){
       else{
         document.getElementById("spanNome").innerHTML = "<input id='nome' value='"+usuarioRetornado[0].nome +"'></input>";
         document.getElementById("spanEmail").innerHTML = "<input id='email' value='"+usuarioRetornado[0].email+"'></input>";
-        document.getElementById("spanSenha").innerHTML = "<input id='senha' type='password' value='"+usuarioRetornado[0].senha+"'></input>";
+        document.getElementById("spanSenha").innerHTML = "<input id='senha' type='password'></input>";
       }
     } 
   }
 }
 
 function confirmaAlteracaoAtendente(){
-  const xmlhttp = new XMLHttpRequest();
-  xmlhttp.open('PATCH', '/api/usuarios/' + localStorage.getItem('emailAlteracao'), true);
-  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-
-  xmlhttp.send(JSON.stringify({
-    nome: document.getElementById('nome').value,
-    email: document.getElementById('email').value,
-    senha: document.getElementById('senha').value
-  }));
-
-  xmlhttp.onreadystatechange = function(){
-    if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 201){
-      retorno = JSON.parse(xmlhttp.responseText);
-      alert("Usuário alterado com sucesso");
-      window.location.href = '/consultar_atendente';
-    } 
-    else if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 403){
-      retorno = JSON.parse(xmlhttp.responseText);
-      alert(retorno.message);        
+  if(!document.getElementById('nome').value){
+    alert("Por favor, preencha o campo Nome");
+  } 
+  else if(!document.getElementById('email').value){
+    alert("Por favor, preencha o campo Email");
+  }  
+  else if(!document.getElementById('senha').value){
+    alert("Por favor, preencha o campo Senha");
+  } 
+  else{  
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+  
+    // Função para calcular o hash da nova senha
+    async function hashSenha(senha) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(senha);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+      return hashHex;
     }
+  
+    // Função para enviar a alteração do usuário para o servidor
+    async function enviarAlteracaoComHash() {
+      const senhaHash = await hashSenha(senha);
+  
+      const xmlhttp = new XMLHttpRequest();
+      xmlhttp.open('PATCH', '/api/usuarios/' + localStorage.getItem('emailAlteracao'), true);
+      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  
+      xmlhttp.send(JSON.stringify({
+        nome: nome,
+        email: email,
+        senha: senhaHash 
+      }));
+  
+      xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 201){
+          const retorno = JSON.parse(xmlhttp.responseText);
+          alert("Usuário alterado com sucesso");
+          window.location.href = '/consultar_atendente';
+        } 
+        else if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 403){
+          const retorno = JSON.parse(xmlhttp.responseText);
+          alert(retorno.message);        
+        }
+      }
+    }
+    enviarAlteracaoComHash();
   }
 }
+
 
 function buscaDadosAtendenteExclusao(){
   emailAtendente = localStorage.getItem('emailExclusao'); 

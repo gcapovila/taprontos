@@ -13,7 +13,7 @@ function realizaLogin() {
 }
 
 function validaLogin(email, password){
-  // Executar GET para comparar email e senha
+  // Executar GET para obter dados do usuário pelo email
   const caminho = '/api/usuarios/' + email;
 
   const xmlhttp = new XMLHttpRequest();
@@ -35,57 +35,60 @@ function validaLogin(email, password){
       else{
         let nomeRetornado = dadosUsuario[0].nome;
         let emailRetornado = dadosUsuario[0].email;
-        let senhaRetornada = dadosUsuario[0].senha;
+        let senhaCriptografada = dadosUsuario[0].senha; // Senha está criptografada como SHA-256 no servidor
 
-        // Somente realiza o bloco abaixo se o email e senha estiverem corretos
-        if(emailRetornado == email && senhaRetornada == password){
+        // Função para calcular o hash da senha inserida pelo usuário
+        async function hashSenha(senha) {
+          const encoder = new TextEncoder();
+          const data = encoder.encode(senha);
+          const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+          const hashArray = Array.from(new Uint8Array(hashBuffer));
+          const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+          return hashHex;
+        }
 
-          // Se o captcha não foi verificado, exibe alerta na tela
-          if ((grecaptcha.getResponse() == undefined) || (grecaptcha.getResponse() == null) || (grecaptcha.getResponse() == "")){
-            alert("Por favor, confirme que você não é um robô (reCAPTCHA)");
-          }
-          else {
+        // Hash da senha inserida pelo usuário
+        hashSenha(password).then(function(hashDaSenha) {
+          if (emailRetornado === email && hashDaSenha === senhaCriptografada) {
 
-            // Obtém o código retornado pela verificação quando o usuário confirma as imagens do captcha
-            const captchaToken = grecaptcha.getResponse();
+            // Verifica se o captcha foi verificado
+            if ((grecaptcha.getResponse() == undefined) || (grecaptcha.getResponse() == null) || (grecaptcha.getResponse() == "")){
+              alert("Por favor, confirme que você não é um robô (reCAPTCHA)");
+            } else {
+              // Obtém o código retornado pela verificação do captcha
+              const captchaToken = grecaptcha.getResponse();
 
-            // Chama a rota configurada para validar o Token na Google, passando o token obtido acima
-            const requestCaptcha = new XMLHttpRequest();
-            requestCaptcha.open('POST', '/api/captcha/', true);
-            requestCaptcha.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            requestCaptcha.send(JSON.stringify({
-              token: captchaToken
-            }));
+              // Chama a rota configurada para validar o Token na Google, passando o token obtido
+              const requestCaptcha = new XMLHttpRequest();
+              requestCaptcha.open('POST', '/api/captcha/', true);
+              requestCaptcha.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+              requestCaptcha.send(JSON.stringify({
+                token: captchaToken
+              }));
 
-            requestCaptcha.onreadystatechange = function() {
+              requestCaptcha.onreadystatechange = function() {
+                if (requestCaptcha.readyState == XMLHttpRequest.DONE) {
+                  // Exibe no console o retorno da validação do captcha
+                  if (requestCaptcha.responseText.trim() != '') {                
+                    responseCaptcha = JSON.parse(requestCaptcha.responseText);
+                    console.log("Resultado da validação do captcha:\n\tStatus da requisição: " + requestCaptcha.status + "\n\tMensagem retornada: '" + responseCaptcha.message + "'");
+                  }
 
-              if (requestCaptcha.readyState == XMLHttpRequest.DONE) {
-                
-                // Exibe no console o retorno da requisição da rota que valida o captcha
-                if (requestCaptcha.responseText.trim() != '') {                
-                  responseCaptcha = JSON.parse(requestCaptcha.responseText);
-                  console.log("Resultado da validação do captcha:\n\tStatus da requisição: " + requestCaptcha.status + "\n\tMensagem retornada: '" + responseCaptcha.message + "'");
+                  // Se o captch retornar sucesso, redireciona para a página inicial, senão exibe alerta de erro
+                  if (requestCaptcha.status == 200) {
+                    localStorage.setItem('email', emailRetornado);
+                    localStorage.setItem('nome', nomeRetornado);
+                    window.location.href = '/';
+                  } else {
+                    alert("Ocorreu um erro ao tentar validar o 'Não sou um robô' (reCAPTCHA)")     
+                  }
                 }
-
-                // Se o captch retornar sucesso, redireciona para a página inicial, senão exibe alerta de erro
-                if (requestCaptcha.status == 200) {
-
-                  localStorage.setItem('email', emailRetornado);
-                  localStorage.setItem('nome', nomeRetornado);
-                  window.location.href = '/';
-
-                } else {
-                  alert("Ocorreu um erro ao tentar validar o 'Não sou um robô' (reCAPTCHA)")     
-                }
-                
               }
-            }            
+            }
+          } else {
+            alert("Email ou senha incorretos. Verifique suas credenciais de acesso.");
           }
-
-        }
-        else{
-          alert("Algo deu errado. Verifique suas credenciais de acesso");
-        }
+        });
       }
     } 
   }

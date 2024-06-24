@@ -17,3 +17,196 @@
 {"level":"debug","message":"Acessado o usuário admin@admin.com","timestamp":"19/06/2024 22:18:59"}
 {"level":"debug","message":"Usuário adicionado com sucesso. ID: 4689192332 | Nome: teste | Email: teste19.06t19.20@teste.com | Senha: tst","timestamp":"19/06/2024 22:23:16"}
 {"level":"debug","message":"Usuário de email teste19.06t19.20@teste.com excluído","timestamp":"19/06/2024 22:23:27"}
+{"level":"debug","message":"Acessado o usuário admin@admin.com","timestamp":"23/06/2024 22:15:35"}
+{"level":"debug","message":"Acessado o usuário dani@teste.com","timestamp":"23/06/2024 22:16:44"}
+{"level":"debug","message":"Acessado o usuário gabriel@gabriel.com","timestamp":"23/06/2024 22:16:54"}
+{"level":"debug","message":"Acessado o usuário dani@teste.com","timestamp":"23/06/2024 22:17:01"}
+{"level":"debug","message":"Usuário de email dani@dani.com alterado com sucesso","timestamp":"23/06/2024 22:17:06"}
+{"level":"debug","message":"Usuário adicionado com sucesso. ID: 5607331735 | Nome: Beltrano | Email: beltrano@baltrano.com","timestamp":"23/06/2024 22:17:43"}
+{"level":"debug","message":"Acessado o usuário dani@dani.com","timestamp":"23/06/2024 22:18:10"}
+{"level":"debug","message":"Usuário de email dani@dani.com alterado com sucesso","timestamp":"23/06/2024 22:18:14"}
+{"level":"debug","message":"Usuário de email ciclano@ciclano.com excluído","timestamp":"23/06/2024 22:18:24"}
+{"level":"debug","message":"Obtendo pedido de senha 0123","timestamp":"23/06/2024 22:49:38"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:54"}
+{"level":"debug","message":"Obtendo o pedido de ID 15","timestamp":"23/06/2024 22:52:56"}
+{"level":"debug","message":"Pedido de ID 15 alterado","timestamp":"23/06/2024 22:52:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:52:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:04"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:14"}
+{"level":"debug","message":"Obtendo o pedido de ID 15","timestamp":"23/06/2024 22:53:15"}
+{"level":"debug","message":"Pedido de ID 15 alterado","timestamp":"23/06/2024 22:53:17"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:55"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:53:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:05"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:55"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:54:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:05"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:55"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:55:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:05"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:55"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:56:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:05"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:55"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:57:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:05"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:55"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:58:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:05"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:55"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 22:59:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:05"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:55"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:00:59"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:05"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:09"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:19"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:25"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:29"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:35"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:39"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:45"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:49"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:01:55"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:02:00"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:02:05"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:02:10"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:02:15"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:02:20"}
+{"level":"debug","message":"Obtendo pedido de senha 4003","timestamp":"23/06/2024 23:02:25"}
+{"level":"debug","message":"Usuário adicionado com sucesso. ID: 2440051811 | Nome: Teste | Email: teste@teste.com","timestamp":"23/06/2024 23:02:32"}
+{"level":"debug","message":"Acessado o usuário teste@teste.com","timestamp":"23/06/2024 23:02:39"}
+{"level":"debug","message":"Usuário de email teste@teste.com alterado com sucesso","timestamp":"23/06/2024 23:03:02"}
+{"level":"debug","message":"Acessado o usuário teste@teste.com","timestamp":"23/06/2024 23:03:08"}
+{"level":"debug","message":"Usuário de email teste@teste.com alterado com sucesso","timestamp":"23/06/2024 23:03:14"}
+{"level":"debug","message":"Acessado o usuário dani@dani.com","timestamp":"23/06/2024 23:04:35"}
+{"level":"debug","message":"Usuário de email dani@dani.com alterado com sucesso","timestamp":"23/06/2024 23:04:41"}
+{"level":"debug","message":"Usuário de email dani@dani.com alterado com sucesso","timestamp":"23/06/2024 23:04:47"}
+{"level":"debug","message":"Usuário de email dani@dani.com alterado com sucesso","timestamp":"23/06/2024 23:04:58"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:05:03"}
+{"level":"debug","message":"Usuário de email fulano@fulano.com alterado com sucesso","timestamp":"23/06/2024 23:05:09"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:05:22"}
+{"level":"debug","message":"Usuário de email fulano@fulano.com alterado com sucesso","timestamp":"23/06/2024 23:05:28"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:07:27"}
+{"level":"debug","message":"Usuário de email fulano@fulano.com alterado com sucesso","timestamp":"23/06/2024 23:07:31"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:07:37"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:08:56"}
+{"level":"debug","message":"Usuário de email fulano@fulano.com alterado com sucesso","timestamp":"23/06/2024 23:09:04"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:09:39"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:12:31"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:12:48"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:15:15"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"23/06/2024 23:17:45"}
+{"level":"debug","message":"Acessado o usuário dani@dani.com","timestamp":"23/06/2024 23:18:48"}
+{"level":"debug","message":"Usuário de email dani@dani.com alterado com sucesso","timestamp":"23/06/2024 23:18:53"}
+{"level":"debug","message":"Acessado o usuário dani@dani.com","timestamp":"23/06/2024 23:19:12"}
+{"level":"debug","message":"Acessado o usuário admin@admin.com","timestamp":"23/06/2024 23:19:41"}
+{"level":"debug","message":"Usuário de email admin@admin.com alterado com sucesso","timestamp":"23/06/2024 23:19:47"}
+{"level":"debug","message":"Acessado o usuário admin@admin.com","timestamp":"23/06/2024 23:20:01"}
+{"level":"debug","message":"Acessado o usuário admin@admin.com","timestamp":"23/06/2024 23:20:07"}
+{"level":"debug","message":"Usuário adicionado com sucesso. ID: 3431124286 | Nome:  | Email: ","timestamp":"23/06/2024 23:20:59"}
+{"level":"debug","message":"Acessado o usuário teste@teste.com","timestamp":"23/06/2024 23:35:30"}
+{"level":"debug","message":"Usuário de email teste@teste.com alterado com sucesso","timestamp":"23/06/2024 23:35:33"}
+{"level":"debug","message":"Acessado o usuário teste@teste.com","timestamp":"23/06/2024 23:35:38"}
+{"level":"debug","message":"Acessado o usuário teste@teste.com","timestamp":"23/06/2024 23:35:46"}
+{"level":"debug","message":"Usuário de email teste@teste.com alterado com sucesso","timestamp":"23/06/2024 23:35:47"}
+{"level":"debug","message":"Acessado o usuário teste@teste.com","timestamp":"23/06/2024 23:36:02"}
+{"level":"debug","message":"Acessado o usuário teste@teste.com","timestamp":"23/06/2024 23:36:17"}
+{"level":"debug","message":"Usuário de email teste@teste.com alterado com sucesso","timestamp":"23/06/2024 23:36:22"}
+{"level":"debug","message":"Usuário adicionado com sucesso. ID: 2187191398 | Nome: aaaaaa | Email: aaaaaaa","timestamp":"23/06/2024 23:37:48"}
+{"level":"debug","message":"Usuário de email aaaaaaa excluído","timestamp":"23/06/2024 23:37:55"}
+{"level":"debug","message":"Usuário de email daniele@daniele.com excluído","timestamp":"24/06/2024 00:03:28"}
+{"level":"debug","message":"Acessado o usuário fulano@fulano.com","timestamp":"24/06/2024 00:03:38"}
+{"level":"debug","message":"Acessado o usuário gabriel@gabriel.com","timestamp":"24/06/2024 00:03:49"}
+{"level":"debug","message":"Acessado o usuário dani@dani.com","timestamp":"24/06/2024 00:04:13"}
+{"level":"debug","message":"Acessado o usuário teste@teste.com","timestamp":"24/06/2024 00:05:04"}
+{"level":"debug","message":"Usuário adicionado com sucesso. ID: 9471434884 | Nome: Ana | Email: ana@ana.com","timestamp":"24/06/2024 00:06:23"}
+{"level":"debug","message":"Acessado o usuário ana@ana.com","timestamp":"24/06/2024 00:06:27"}
+{"level":"debug","message":"Acessado o usuário ana@ana.com","timestamp":"24/06/2024 00:07:36"}
+{"level":"debug","message":"Usuário de email ana@ana.com alterado com sucesso","timestamp":"24/06/2024 00:07:41"}
+{"level":"debug","message":"Acessado o usuário teste@teste.com","timestamp":"24/06/2024 00:07:51"}
+{"level":"debug","message":"Usuário de email teste@teste.com alterado com sucesso","timestamp":"24/06/2024 00:07:59"}
+{"level":"debug","message":"Acessado o usuário admin@admin.com","timestamp":"24/06/2024 00:08:13"}
+{"level":"debug","message":"Acessado o usuário admin@admin.com","timestamp":"24/06/2024 00:08:23"}
+{"level":"debug","message":"Acessado o usuário admin@admin.com","timestamp":"24/06/2024 00:08:28"}

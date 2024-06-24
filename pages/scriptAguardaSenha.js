@@ -1,6 +1,5 @@
 window.onload = function(){
-    var nomeStatus;
-    
+   
     // Assim que a tela é aberta, o sistema chama a função 
     senha = localStorage.getItem("senhaCliente");
     atualizaStatus(senha);
@@ -15,17 +14,40 @@ window.onload = function(){
     document.getElementById("exibeSenha").innerHTML =  senha;
 }
 
-function atualizaStatus(senha){
+function atualizaStatus(senha) {
+    // Caso a senha esteja vazia
+    if (!senha) {
+        console.error('Senha não fornecida');
+        alert('Por favor, forneça uma senha válida para atualizar o status do pedido.');
+        return;
+    }
+
     fetch(`/api/senha/${senha}`)
-        .then(resposta => resposta.json())
-        .then (retorno => {console.log(retorno)
-            var status = retorno[0].status;     
-            var nomeStatus = formataStatus(status);
-            console.log("Status do pedido: " + nomeStatus);
-            document.getElementById("situacaoPedido").innerHTML = "Situação do seu pedido: "+ nomeStatus;
-            montaBarraProgresso(status);
+        .then(resposta => {
+            if (!resposta.ok) {
+                throw new Error('Erro ao obter os dados do servidor');
+            }
+            return resposta.json();
         })
-        .catch(err => console.error('Erro:', err))
+        .then(retorno => {
+            console.log(retorno);
+
+            if (retorno.length > 0 && retorno[0].status !== undefined) {
+                var status = retorno[0].status;                
+            } 
+            else {
+                console.log("A senha fornecida não existe")
+                status = 5;
+            }
+            var nomeStatus = formataStatus(status);
+                console.log("Status do pedido: " + nomeStatus);
+                document.getElementById("situacaoPedido").innerHTML = "Situação do seu pedido: " + nomeStatus;
+                montaBarraProgresso(status);
+        })
+        .catch(err => {
+            console.error('Erro:', err);
+            alert('Ocorreu um erro ao atualizar o status do pedido. Por favor, tente novamente mais tarde.');
+        });
 }
 
 function formataStatus(status){
@@ -38,6 +60,8 @@ function formataStatus(status){
             return "Pedido pronto!";
         case 4: 
             return "Pedido entregue!";
+        case 5: 
+            return "Senha não encontrada. Por favor, volte e passe uma senha válida.";
     }
 }
 
